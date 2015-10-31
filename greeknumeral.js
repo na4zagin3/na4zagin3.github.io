@@ -19,7 +19,7 @@ digitsArray[3][0] = "";
 
 function upToMyriad(n) {
     if (n.lesser(0) || n.greater(10000)) {
-        return "to big";
+        return "too big";
     }
     var i;
     var str="";
@@ -54,14 +54,24 @@ function splitMyriad(n) {
     return arr;
 }
 
-function convertCommon(n) {
+function convertUpToMyriad(n) {
     if (n.lesser(0)) {
         return "negative";
     }
     if (n.lesser(0) || n.greater(10000)) {
-        return "to big";
+        return "too big";
     }
     return addNumeralSign(upToMyriad(n));
+}
+
+function convertCommon(n) {
+    if (n.lesser(0)) {
+        return "negative";
+    }
+    if (n.lesser(0) || n.greater(100000000)) {
+        return "too big";
+    }
+    return convertAristarchusA(n);
 }
 
 function convertModern(n) {
@@ -69,7 +79,7 @@ function convertModern(n) {
         return "negative";
     }
     if (n.lesser(0) || n.greater(10000)) {
-        return "to big";
+        return "too big";
     }
     return addNumeralSign(upToMyriad(n));
 }
@@ -88,7 +98,7 @@ function AristarchusBExponent(n) {
 
 function AristarchusBMyriad(n, i) {
     if (n.greater(0)) {
-        return convertCommon(n) + AristarchusBExponent(i);
+        return convertUpToMyriad(n) + AristarchusBExponent(i);
     } else {
         return "";
     }
@@ -143,14 +153,14 @@ function convertDiophantus(n) {
     if (n.lesser(0)) {
         return "negative";
     }
-    return splitMyriad(n).map(convertCommon).reverse().join(".");
+    return splitMyriad(n).map(convertUpToMyriad).reverse().join(".");
 }
 
 function convertAristarchusA(n) {
     if (n.lesser(0)) {
         return "negative";
     }
-    return splitMyriad(n).map(convertCommon).reverse().join(M);
+    return splitMyriad(n).map(convertUpToMyriad).reverse().join(M);
 }
 
 function convertAristarchusB(n) {
