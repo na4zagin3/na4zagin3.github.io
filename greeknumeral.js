@@ -202,6 +202,7 @@ function convert() {
     // document.theForm.reset();
     var numString = document.theForm.theNumber.value;
     var num = bigInt(numString);
+    document.theForm.Original.value = num.toString();
     document.theForm.normal.value = convertCommon(num);
     document.theForm.Diophantus.value = convertDiophantus(num);
     document.theForm.Aristarchus.value = convertAristarchusA(num);
