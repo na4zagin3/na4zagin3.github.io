@@ -68,7 +68,7 @@ function convertCommon(n) {
     if (n.lesser(0)) {
         return "negative";
     }
-    if (n.lesser(0) || n.greater(100000000)) {
+    if (n.lesser(0) || n.greaterOrEquals(100000000)) {
         return "too big";
     }
     return convertAristarchusA(n);
