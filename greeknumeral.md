@@ -62,10 +62,10 @@ modified Apollonius without comma:
 </tr>
 <tr>
 <td>
-dotted:
+Apollonius:
 </td>
 <td>
-<textarea name="dotted" class="greek" cols=80 rows=2 readOnly style="width: 99%; overflow: visible; padding: 5px"></textarea>
+<textarea name="ApolloniusC" class="greek" cols=80 rows=2 readOnly style="width: 99%; overflow: visible; padding: 5px"></textarea>
 </td>
 </tr>
 </table>

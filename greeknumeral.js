@@ -149,6 +149,12 @@ function convertApolloniusB(n, e) {
     return addNumeralSign(convertApolloniusSub(n, e, ""));
 }
 
+function convertApolloniusC(n, e) {
+    if (typeof e === 'undefined') { e = 1; }
+
+    return addNumeralSign(convertApolloniusSub(n, e, " καὶ "));
+}
+
 function convertDiophantus(n) {
     if (n.lesser(0)) {
         return "negative";
@@ -181,6 +187,7 @@ function convert() {
 //    document.theForm.AristarchusB.value = convertAristarchusB(num);
     document.theForm.ApolloniusA.value = convertApolloniusA(num);
     document.theForm.ApolloniusB.value = convertApolloniusB(num);
+    document.theForm.ApolloniusC.value = convertApolloniusC(num);
 }
 function inc(n) {
     var numString = document.theForm.theNumber.value;
