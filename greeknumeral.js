@@ -149,8 +149,30 @@ function convertApolloniusB(n, e) {
     return addNumeralSign(convertApolloniusSub(n, e, ""));
 }
 
+function log10(n) {
+    if (n.lesser(1)) {
+		return 0;
+	}
+	var x = 0;
+	while (n.greaterOrEquals(10)) {
+		var c = 1;
+		var e = bigInt(10);
+		while (n.greaterOrEquals(e)) {
+			x = x + c;
+			n = n.divide(e);
+			if (c < 7) {
+				e = e.multiply(10);
+				c = c + 1;
+			}
+		}
+	}
+	return x;
+}
 function convertApolloniusC(n, e) {
     if (typeof e === 'undefined') { e = 1; }
+	if (log10(n) >= 40000) {
+		return "I cannot show correctly yet.";
+	}
 
     return addNumeralSign(convertApolloniusSub(n, e, " καὶ "));
 }
@@ -185,9 +207,14 @@ function convert() {
     document.theForm.Aristarchus.value = convertAristarchusA(num);
 //    document.theForm.AristarchusA.value = convertAristarchusA(num);
 //    document.theForm.AristarchusB.value = convertAristarchusB(num);
-    document.theForm.ApolloniusA.value = convertApolloniusA(num);
-    document.theForm.ApolloniusB.value = convertApolloniusB(num);
-    document.theForm.ApolloniusC.value = convertApolloniusC(num);
+    var apolloniusStr = convertApolloniusA(num);
+    document.theForm.ApolloniusA.value = apolloniusStr;
+    document.theForm.ApolloniusB.value = apolloniusStr.replace(/,/g, "");
+	if (apolloniusStr.match(/ʹʹ,/)) {
+    	document.theForm.ApolloniusC.value = "I cannot show correctly yet.";
+	} else {
+    	document.theForm.ApolloniusC.value = apolloniusStr.replace(/,/g, " καὶ ");
+	}
 }
 function inc(n) {
     var numString = document.theForm.theNumber.value;
