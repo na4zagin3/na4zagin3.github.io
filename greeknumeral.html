@@ -1,107 +1,41 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="na4zagin3" />
   <title>Greek Number Converter</title>
-  <style type="text/css">code{white-space: pre;}</style>
-  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="pandoc.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
-<div id="header">
+<header id="title-block-header">
 <h1 class="title">Greek Number Converter</h1>
-<h2 class="author">na4zagin3</h2>
-</div>
-<script src="./BigInteger.min.js"></script>
-<script src="greeknumeral.js"/>
+<p class="author">na4zagin3</p>
+</header>
+<script src="elm.min.js"></script>
+<div id="elm">
 
+</div>
 <script>
+var app = Elm.Main.init({
+  node: document.getElementById('elm')
+});
 </script>
 <p>Inspired from</p>
 <ul>
 <li><a href="http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm" class="uri">http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm</a>.</li>
 <li><a href="http://www-history.mcs.st-andrews.ac.uk/HistTopics/Greek_numbers.html" class="uri">http://www-history.mcs.st-andrews.ac.uk/HistTopics/Greek_numbers.html</a>.</li>
-<li><a href="https://books.google.co.jp/books?id=hdw5AAAAIAAJ&amp;pg=PR69&amp;lpg=PR69&amp;dq=Myriad+greek+numeral&amp;source=bl&amp;ots=WnDgh9izs4&amp;sig=fHko32UGPPKlsL_Bkyk6Iqh6qoc&amp;hl=ja&amp;sa=X&amp;ved=0CEYQ6AEwCDgKahUKEwifvuLb_ubIAhXBN6YKHc9zBMw#v=onepage&amp;q=Myriad%20greek%20numeral&amp;f=false">https://books.google.co.jp/books?id=hdw5AAAAIAAJ&amp;pg=PR69&amp;lpg=PR69&amp;dq=Myriad+greek+numeral&amp;source=bl&amp;ots=WnDgh9izs4&amp;sig=fHko32UGPPKlsL_Bkyk6Iqh6qoc&amp;hl=ja&amp;sa=X&amp;ved=0CEYQ6AEwCDgKahUKEwifvuLb_ubIAhXBN6YKHc9zBMw#v=onepage&amp;q=Myriad%20greek%20numeral&amp;f=false</a></li>
+<li><a href="https://books.google.co.jp/books?id=hdw5AAAAIAAJ&amp;pg=PR69&amp;lpg=PR69&amp;dq=Myriad+greek+numeral&amp;source=bl&amp;ots=WnDgh9izs4&amp;sig=fHko32UGPPKlsL_Bkyk6Iqh6qoc&amp;hl=ja&amp;sa=X&amp;ved=0CEYQ6AEwCDgKahUKEwifvuLb_ubIAhXBN6YKHc9zBMw#v=onepage&amp;q=Myriad%20greek%20numeral&amp;f=false" class="uri">https://books.google.co.jp/books?id=hdw5AAAAIAAJ&amp;pg=PR69&amp;lpg=PR69&amp;dq=Myriad+greek+numeral&amp;source=bl&amp;ots=WnDgh9izs4&amp;sig=fHko32UGPPKlsL_Bkyk6Iqh6qoc&amp;hl=ja&amp;sa=X&amp;ved=0CEYQ6AEwCDgKahUKEwifvuLb_ubIAhXBN6YKHc9zBMw#v=onepage&amp;q=Myriad%20greek%20numeral&amp;f=false</a></li>
 </ul>
-<form name="theForm" onSubmit="convert(); return false" action>
-<table border="0" cellPadding="0" cellSpacing="5" width="100%">
-<tr>
-<td>
-<input type="text" name="theNumber" size="53" placeholder="e.g. 1024"/> <a href="javascript:;" onClick="convert(); return false"><b>Convert!</b></a>
-</td>
-<td align="right">
-<a href="javascript:;" onClick="inc(-1); return false"><big>«</big></a> | <a href="javascript:;" onClick="inc(1); return false"><big>»</big></a> | <a href="javascript:;" onClick="rst(); return false">Reset</a>
-</td>
-</tr>
-</table>
-<table border="0" cellPadding="0" cellSpacing="5" width="100%">
-<tr>
-<td>
-Converted from:
-</td>
-<td>
-<textarea name="Original" class="greek" cols="80" rows="2" readOnly style="width: 99%; overflow: visible; padding: 5px">
-</textarea>
-</td>
-</tr>
-<tr>
-<tr>
-<td>
-Common:
-</td>
-<td>
-<textarea name="normal" class="greek" cols="80" rows="2" readOnly style="width: 99%; overflow: visible; padding: 5px">
-</textarea>
-</td>
-</tr>
-<tr>
-<td>
-modified Diophantus:
-</td>
-<td>
-<textarea name="Diophantus" class="greek" cols="80" rows="2" readOnly style="width: 99%; overflow: visible; padding: 5px">
-</textarea>
-</td>
-</tr>
-<tr>
-<td>
-modified Aristarchus:
-</td>
-<td>
-<textarea name="Aristarchus" class="greek" cols="80" rows="2" readOnly style="width: 99%; overflow: visible; padding: 5px">
-</textarea>
-</td>
-</tr>
-<td>
-modified Apollonius with comma:
-</td>
-<td>
-<textarea name="ApolloniusA" class="greek" cols="80" rows="2" readOnly style="width: 99%; overflow: visible; padding: 5px">
-</textarea>
-</td>
-</tr>
-</tr>
-<tr>
-<td>
-modified Apollonius without comma:
-</td>
-<td>
-<textarea name="ApolloniusB" class="greek" cols="80" rows="2" readOnly style="width: 99%; overflow: visible; padding: 5px">
-</textarea>
-</td>
-</tr>
-<tr>
-<td>
-Apollonius:
-</td>
-<td>
-<textarea name="ApolloniusC" class="greek" cols="80" rows="2" readOnly style="width: 99%; overflow: visible; padding: 5px">
-</textarea>
-</td>
-</tr>
-</table>
-</form>
 </body>
 </html>
