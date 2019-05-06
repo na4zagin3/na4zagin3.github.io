@@ -20,8 +20,8 @@ Inspired from Russell Cottrell’s [Greek Number Converter](http://www.russellco
 
 # Notations
 In this document, I use myriad separators (e.g., 1234,5678,9012) rather than thousand separators (e.g., 123,456,789,012).
-For sexagesimal notations, I use 12°34′56″7‴8⁗ for degrees (360 degrees = 1 turn), 12^p^34′56″7‴8⁗ for segments (120 segments = 1 diameter), and modern notation like 1,2;3,4  for general sexagesimal fractions.
-In modern sexagesimal notation, “,” is a sexagesimal separater and “;” is followed by a fraction part. Therefore $\text{1,2;3,4} = 1 \times 60 + 2 = \frac{3}{60} + \frac{4}{60^2}$.
+For sexagesimal notations, I write 12°34′56″7‴8⁗ for degrees (360 degrees = 1 turn), 12^p^34′56″7‴8⁗ for segments (120 segments = 1 diameter; “p” stands for _pars_), and modern notation like 1,2;3,4  for general sexagesimal fractions.
+In modern sexagesimal notation, “,” is a sexagesimal separator and “;” is followed by a fraction part. Therefore $\text{1,2;3,4} = 1 \times 60 + 2 + \frac{3}{60} + \frac{4}{60^2}$.
 
 # Systems
 ## Decimal Systems before Ionian Systems
