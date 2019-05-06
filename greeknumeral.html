@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="na4zagin3" />
+  <meta name="author" content="SAKAMOTO Noriaki (@na4zagin3)" />
   <title>Greek Number Converter</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
@@ -20,8 +20,9 @@
 <body>
 <header id="title-block-header">
 <h1 class="title">Greek Number Converter</h1>
-<p class="author">na4zagin3</p>
+<p class="author">SAKAMOTO Noriaki (@na4zagin3)</p>
 </header>
+<p>Source code at GitHub <a href="https://github.com/na4zagin3/elm-grcnum">na4zagin3/elm-grcnum</a>.</p>
 <script src="elm.min.js"></script>
 <div id="elm">
 
@@ -31,11 +32,76 @@ var app = Elm.Main.init({
   node: document.getElementById('elm')
 });
 </script>
-<p>Inspired from</p>
+<p>Inspired from Russell Cottrell’s <a href="http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm">Grek Number Converter</a>.</p>
+<h1 id="systems">Systems</h1>
+<h2 id="attic">Attic</h2>
+<p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:41–42)</span>.</p>
+<h2 id="common-ionian">Common Ionian</h2>
+<p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:42–44)</span>.</p>
+<h2 id="diophantus">Diophantus</h2>
+<p>Based on format used Diophantus <em>Arithmetica</em> iv. 18 <span class="citation" data-cites="GMT2">(Thomas 1993, 2:550)</span>, where 262143 (κϛ.͵βρμγ) appears as numerator (contrary to modern mathematics notation, a numerator is located below a denominator).</p>
+<blockquote>
+<p>Ἐπὶ τὰς ὑποστάσεισ! ἔσται ὁ α<sup>ος</sup> ἑνὸς ιϛ<sup>ον</sup>, ὁ δὲ β<sup>ος</sup> <span style="display: inline-flex; flex-direction: column; vertical-align: middle;"><span style="text-align: center; line-height: 1em;">͵δϟϛ</span><span style="text-align: center; line-height: 1em;">κϛ. ͵βρμγ</span></span>.</p>
+</blockquote>
+<p>and <span class="citation" data-cites="Heath1897">(Heath 1897, lxix)</span></p>
+<blockquote>
+<p>Diophantus denoted myriads followed by thousands by the ordinary signs for numbers of units, only separating them by a dot from the thousands. Thus for 3,069,000 he writes and for 331776.</p>
+</blockquote>
+<p>This converter does not yet support <span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span> prefix although <span class="citation" data-cites="GMT1">(Thomas 1991, 1:44)</span> says</p>
+<blockquote>
+<p>Another method is to use the sign Μ or <span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span> for the myriad and to put the number of myriads after it, separated by a dot from the thousands.</p>
+<p>Thus</p>
+<p><span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span><span><span style="text-decoration: overline; line-height: 2em;">ρδ</span><span>.<wbr></span><span style="text-decoration: overline; line-height: 2em;">͵ηφοϛ</span></span> (Diophantus vi. 22, ed. Tannery 446. 11).</p>
+</blockquote>
+<h2 id="heron">Heron</h2>
+<p><span class="citation" data-cites="GMT1">(Thomas 1991, 1:44)</span> says</p>
+<blockquote>
+<p>In a third method the symbol M is not used, but the symbol representing the number of myriads has two dots placed over it.</p>
+<p>Thus</p>
+<p>α̈. <span style="text-decoration: overline;">͵ηχϟϛ</span> = 18596 (Heron, <em>Geometrica</em> xvii. 33, ed. Heiberg 348. 35).</p>
+<p>Heron commenly wrote the word μυριάδες in full.</p>
+</blockquote>
+<p>and <span class="citation" data-cites="Heath1897">(Heath 1897, lxix)</span> says</p>
+<blockquote>
+<p>Sometimes myriads were represented by the ordinary letters with two dots above, as ρ̈ = 100 myriads (1,000,000), and myriads of myriads with two pairs of dots, as ϊ̈ for 10 myriad-myriads (1,000,000,000).</p>
+</blockquote>
+<h2 id="aristarchus">Aristarchus</h2>
+<p>Although the algorithm is based on <a href="http://www-history.mcs.st-andrews.ac.uk/HistTopics/Greek_numbers.html">Greek number systems</a>, which is full of mistakes, it is not reliable. I’m now trying to find reliable sources.</p>
+<h2 id="apollonius">Apollonius</h2>
+<p>Based on <span class="citation" data-cites="Hultsch1876">(Hultsch 1876, 1:2–29)</span>.</p>
+<h2 id="modified-apollonius">Modified Apollonius</h2>
+<p>I slightly modified the system to distinguish μ<sup>ο</sup> “μονάδες” vs. Μ<sup>α</sup> “μυριάδες ἁπλαῖ”, Μ<sup>β</sup> “μυριάδες διπλαῖ”, and so on.</p>
+<h2 id="sexagesimal">Sexagesimal</h2>
+<p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:48–61)</span>.</p>
 <ul>
-<li><a href="http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm" class="uri">http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm</a>.</li>
-<li><a href="http://www-history.mcs.st-andrews.ac.uk/HistTopics/Greek_numbers.html" class="uri">http://www-history.mcs.st-andrews.ac.uk/HistTopics/Greek_numbers.html</a>.</li>
-<li><a href="https://books.google.co.jp/books?id=hdw5AAAAIAAJ&amp;pg=PR69&amp;lpg=PR69&amp;dq=Myriad+greek+numeral&amp;source=bl&amp;ots=WnDgh9izs4&amp;sig=fHko32UGPPKlsL_Bkyk6Iqh6qoc&amp;hl=ja&amp;sa=X&amp;ved=0CEYQ6AEwCDgKahUKEwifvuLb_ubIAhXBN6YKHc9zBMw#v=onepage&amp;q=Myriad%20greek%20numeral&amp;f=false" class="uri">https://books.google.co.jp/books?id=hdw5AAAAIAAJ&amp;pg=PR69&amp;lpg=PR69&amp;dq=Myriad+greek+numeral&amp;source=bl&amp;ots=WnDgh9izs4&amp;sig=fHko32UGPPKlsL_Bkyk6Iqh6qoc&amp;hl=ja&amp;sa=X&amp;ved=0CEYQ6AEwCDgKahUKEwifvuLb_ubIAhXBN6YKHc9zBMw#v=onepage&amp;q=Myriad%20greek%20numeral&amp;f=false</a></li>
+<li>200′15″: ἀπὸ τῶν λοιπῶν πρώτων ἑξηκοστῶν <span style="text-decoration: overline;">σ</span> καὶ δευτέρων <span style="text-decoration: overline;">ιε</span> <span class="citation" data-cites="GMT1">(Thomas 1991, 1:50)</span></li>
+<li>124′ … 7440″: <span style="text-decoration: overline;">ρκδ</span> πρῶτα ἑξηκοστὰ … εἰς δεύτερα <span style="text-decoration: overline;">͵ζυμ</span> <span class="citation" data-cites="GMT1">(Thomas 1991, 1:58)</span></li>
+<li>67°4′: <span style="text-decoration: overline;">ξζ</span> <span style="text-decoration: overline;">δ</span> <span class="citation" data-cites="GMT1">(Thomas 1991, 1:58)</span></li>
+<li>134°8′: <span style="text-decoration: overline;">ρλδ</span> <span style="text-decoration: overline;">η</span> <span class="citation" data-cites="GMT1">(Thomas 1991, 1:58)</span></li>
 </ul>
+<h2 id="sexagesimal-ptolemy">Sexagesimal Ptolemy</h2>
+<p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:47)</span></p>
+<blockquote>
+<p>In his sexagesimal notation, Ptolemy used the symbol <strong>O</strong> to stand for οὐδεμία μοῖρα or οὐδὲν ἑξηκοστόν. The diverse views which have been held on this symbol from the time of Delambre are summed up by Loria (<span lang="it"><em>Le scienze esatte nell’ antica Grecia</span>, p.761</em>) in the words: “<span lang="it">In base ai documenti scoperti e decifrati sino ad oggi, siamo autorizzati a negare che i Greci usasserolo zero nel senso e nel modo in cui lo adoperiamo noi.</span>”</p>
+</blockquote>
+<p>and</p>
+<ul>
+<li>0<sup>p</sup>47′8″: Ο <span><span style="text-decoration: overline; line-height: 2em;">μζ</span></span> <span><span style="text-decoration: overline; line-height: 2em;">η</span></span> <span class="citation" data-cites="GMT2">(Thomas 1993, 2:430)</span></li>
+</ul>
+<h1 id="references" class="unnumbered">References</h1>
+<div id="refs" class="references">
+<div id="ref-Heath1897">
+<p>Heath, Sir, Thomas Little, ed. 1897. <em>The Works of Archimedes</em>. London, England: Cambridge University Press.</p>
+</div>
+<div id="ref-Hultsch1876">
+<p>Hultsch, Fridericus, ed. 1876. <em>Pappi Alexandrini Collectionis Quae Supersunt</em>. Vol. 1. Berolini: Apud Weidmannos.</p>
+</div>
+<div id="ref-GMT1">
+<p>Thomas, Ivor, ed. 1991. <em>Greek Methematical Works: Thales to Euclid</em>. Vol. 1. Loeb Classical Library. London, England: Harvard University Press.</p>
+</div>
+<div id="ref-GMT2">
+<p>———, ed. 1993. <em>Greek Methematical Works: Aristarchus to Pappus</em>. Vol. 2. Loeb Classical Library. London, England: Harvard University Press.</p>
+</div>
+</div>
 </body>
 </html>

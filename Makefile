@@ -1,5 +1,6 @@
 
 CSS=pandoc.css
+BIB=ref.bib
 
 .PHONY: all pages
 
@@ -7,5 +8,5 @@ all: pages
 
 pages: index.html greeknumeral.html
 
-%.html: %.md $(CSS) Makefile
-	pandoc -s --css=$(CSS) -o $@ $<
+%.html: %.md $(CSS) $(BIB) Makefile
+	pandoc --bibliography=$(BIB) -s --css=$(CSS) -o $@ $<
