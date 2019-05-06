@@ -33,7 +33,7 @@ Based on [@GMT1, pp. 41--42].
 Based on [@GMT1, pp. 42--44].
 
 ### Diophantus
-Based on format used Diophantus _Arithmetica_ iv. 18 [@GMT2, p. 550], where 26,2143 (κϛ.͵βρμγ) appears as a numerator (Note: contrary to modern mathematics notation, a numerator is located below a denominator).
+Based on format used Diophantus _Arithmetica_ iv. 18 [@GMT2, p. 550], where 26,2143 (κϛ.͵βρμγ) appears as a numerator (Note: contrary to modern mathematics notation, a numerator is located _below_ a denominator).
 
 > Ἐπὶ τὰς ὑποστάσεις· ἔσται ὁ α^ος^ ἑνὸς ιϛ^ον^, ὁ δὲ β^ος^ <span style="display: inline-flex; flex-direction: column; vertical-align: middle;"><span style="text-align: center; line-height: 1em;">͵δϟϛ</span><span style="text-align: center; line-height: 1em;">κϛ. ͵βρμγ</span></span>.
 
@@ -41,7 +41,7 @@ and [@Heath1897, p. lxix]
 
 > Diophantus denoted myriads followed by thousands by the ordinary signs
 > for numbers of units, only separating them by a dot from the thousands. Thus
-> for 3,069,000 he writes  and  for 331776.
+> for 3,069,000 he writes <span style="text-decoration: overline;">τϛ</span>.<wbr><span style="text-decoration: overline;">͵θ</span>, and <span style="text-decoration: overline;">λγ</span>.<wbr><span style="text-decoration: overline;">͵αψοϛ</span> for 331,776.
 
 This converter does not yet support <span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span> prefix described in [@GMT1, p. 44]
 
@@ -53,7 +53,7 @@ This converter does not yet support <span style="display: inline-flex; flex-dire
 >
 > <span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span><span><span style="text-decoration: overline; line-height: 2em;">ρδ</span><span>.<wbr></span><span style="text-decoration: overline; line-height: 2em;">͵ηφοϛ</span></span> (Diophantus vi. 22, ed. Tannery 446. 11).
 
-This converter extended the system so that it can represents numbers greater than 9999,9999.
+This converter extends the system for numbers greater than 9999,9999, interpreting the system “putting a dot between every myriads.”
 
 ### Heron
 [@GMT1, p. 44] says
@@ -77,8 +77,10 @@ and [@Heath1897, p. lxix] says
 
 ### Aristarchus
 
-Although the algorithm is based on [Greek number systems](http://www-history.mcs.st-andrews.ac.uk/HistTopics/Greek_numbers.html), which is full of mistakes, it is not reliable.
-I’m now trying to find reliable sources.
+Based on [Greek number systems](http://www-history.mcs.st-andrews.ac.uk/HistTopics/Greek_numbers.html), which is apparently written by those who do not know Greek language, hence not reliable.
+I’m now finding more reliable sources.
+
+This converter extends the system for numbers greater than 9999,9999, interpreting the system “putting Μ between every myriads.”
 
 ### Apollonius
 

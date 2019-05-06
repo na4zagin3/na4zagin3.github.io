@@ -60,13 +60,13 @@ var app = Elm.Main.init({
 <h3 id="common-ionian">Common Ionian</h3>
 <p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:42–44)</span>.</p>
 <h3 id="diophantus">Diophantus</h3>
-<p>Based on format used Diophantus <em>Arithmetica</em> iv. 18 <span class="citation" data-cites="GMT2">(Thomas 1993, 2:550)</span>, where 26,2143 (κϛ.͵βρμγ) appears as a numerator (Note: contrary to modern mathematics notation, a numerator is located below a denominator).</p>
+<p>Based on format used Diophantus <em>Arithmetica</em> iv. 18 <span class="citation" data-cites="GMT2">(Thomas 1993, 2:550)</span>, where 26,2143 (κϛ.͵βρμγ) appears as a numerator (Note: contrary to modern mathematics notation, a numerator is located <em>below</em> a denominator).</p>
 <blockquote>
 <p>Ἐπὶ τὰς ὑποστάσεις· ἔσται ὁ α<sup>ος</sup> ἑνὸς ιϛ<sup>ον</sup>, ὁ δὲ β<sup>ος</sup> <span style="display: inline-flex; flex-direction: column; vertical-align: middle;"><span style="text-align: center; line-height: 1em;">͵δϟϛ</span><span style="text-align: center; line-height: 1em;">κϛ. ͵βρμγ</span></span>.</p>
 </blockquote>
 <p>and <span class="citation" data-cites="Heath1897">(Heath 1897, lxix)</span></p>
 <blockquote>
-<p>Diophantus denoted myriads followed by thousands by the ordinary signs for numbers of units, only separating them by a dot from the thousands. Thus for 3,069,000 he writes and for 331776.</p>
+<p>Diophantus denoted myriads followed by thousands by the ordinary signs for numbers of units, only separating them by a dot from the thousands. Thus for 3,069,000 he writes <span style="text-decoration: overline;">τϛ</span>.<wbr><span style="text-decoration: overline;">͵θ</span>, and <span style="text-decoration: overline;">λγ</span>.<wbr><span style="text-decoration: overline;">͵αψοϛ</span> for 331,776.</p>
 </blockquote>
 <p>This converter does not yet support <span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span> prefix described in <span class="citation" data-cites="GMT1">(Thomas 1991, 1:44)</span></p>
 <blockquote>
@@ -74,7 +74,7 @@ var app = Elm.Main.init({
 <p>Thus</p>
 <p><span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span><span><span style="text-decoration: overline; line-height: 2em;">ρδ</span><span>.<wbr></span><span style="text-decoration: overline; line-height: 2em;">͵ηφοϛ</span></span> (Diophantus vi. 22, ed. Tannery 446. 11).</p>
 </blockquote>
-<p>This converter extended the system so that it can represents numbers greater than 9999,9999.</p>
+<p>This converter extends the system for numbers greater than 9999,9999, interpreting the system “putting a dot between every myriads.”</p>
 <h3 id="heron">Heron</h3>
 <p><span class="citation" data-cites="GMT1">(Thomas 1991, 1:44)</span> says</p>
 <blockquote>
@@ -88,7 +88,8 @@ var app = Elm.Main.init({
 <p>Sometimes myriads were represented by the ordinary letters with two dots above, as ρ̈ = 100 myriads (1,000,000), and myriads of myriads with two pairs of dots, as ϊ̈ for 10 myriad-myriads (1,000,000,000).</p>
 </blockquote>
 <h3 id="aristarchus">Aristarchus</h3>
-<p>Although the algorithm is based on <a href="http://www-history.mcs.st-andrews.ac.uk/HistTopics/Greek_numbers.html">Greek number systems</a>, which is full of mistakes, it is not reliable. I’m now trying to find reliable sources.</p>
+<p>Based on <a href="http://www-history.mcs.st-andrews.ac.uk/HistTopics/Greek_numbers.html">Greek number systems</a>, which is apparently written by those who do not know Greek language, hence not reliable. I’m now finding more reliable sources.</p>
+<p>This converter extends the system for numbers greater than 9999,9999, interpreting the system “putting Μ between every myriads.”</p>
 <h3 id="apollonius">Apollonius</h3>
 <p>Based on <span class="citation" data-cites="Hultsch1876">(Hultsch 1876, 1:2–29)</span>.</p>
 <h3 id="modified-apollonius">Modified Apollonius</h3>
