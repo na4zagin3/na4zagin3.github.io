@@ -77,7 +77,7 @@ h1.title {
     margin-right: auto; 
 	width: auto;
     /* width: 50%; */
-	/* float: left; */
+	float: left;
 	/* display: inline; */
 	border-bottom: none;
 }
@@ -91,7 +91,7 @@ h1.title {
 	border-bottom: none;
 }
 
-#header {
+#title-block-header {
 	overflow: hidden;
 }
 
