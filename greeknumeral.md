@@ -20,7 +20,7 @@ Inspired from Russell Cottrell’s [Greek Number Converter](http://www.russellco
 
 # Notations
 In this document, I use myriad separators (e.g., 1234,5678,9012) rather than thousand separators (e.g., 123,456,789,012).
-For sexagesimal notations, I write 12°34′56″7‴8⁗ for degrees (360 degrees = 1 turn), 12^p^34′56″7‴8⁗ for segments (120 segments = 1 diameter; “p” stands for _pars_), and modern notation like 1,2;3,4  for general sexagesimal fractions.
+For sexagesimal notations, I write 12°34′56″7‴8⁗ for degrees (360 degrees = 1 turn), 12^p^34′56″7‴8⁗ for segments (120 segments = 1 diameter; “p” stands for _partes_ “parts”), and modern notation like 1,2;3,4  for general sexagesimal fractions.
 In modern sexagesimal notation, “,” is a sexagesimal separator and “;” is followed by a fraction part. Therefore $\text{1,2;3,4} = 1 \times 60 + 2 + \frac{3}{60} + \frac{4}{60^2}$.
 
 # Systems
@@ -86,10 +86,74 @@ This converter extends the system for numbers greater than 9999,9999, interpreti
 
 Based on [@Hultsch1876, pp. 2--29].
 
-### Modified Apollonius
+#### Modified Apollonius
 
 I slightly modified the system to distinguish μ^ο^ “μονάδες” vs. Μ^α^ “μυριάδες ἁπλαῖ”, Μ^β^ “μυριάδες διπλαῖ”, and so on.
 
+#### Russell Cottrell’s Notation
+
+**This notation is not used by Ancient Greeks. As of now, there is no method to spell out numbers written in this notation.**
+
+This is based on a idea proposed by Russell Cottrell.
+Although his description is contradicting to his converter’s outputs, he gave some examples in his Greek Number Converter [Greek Number Converter](http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm):
+
+> Partly because of limitations imposed by web page forms, I have modernized the rendering slightly by placing the power of the myriad beside, rather than above, the M; separating the groups by commas; and using the later convention of accent-like upper and lower numeral signs instead of an iota superscript.
+> 
+> For example:  2,056,839,184 becomes βΜκʹ, αΜ͵εχπγ, ͵θρπδ.
+> ͵θρπδ represents the final 9184, ͵εχπγ the 5683, with αΜ indicating that the latter is multiplied by the first power of M (10,000).  βΜκʹ represents 20 multiplied by the second power of M (100,000,000).
+
+Ignoring unclear usage of “ʹ” his idea can be summarized as follows.
+
+- Each group has form `<exponent>Μ<significand>` or `<significand>` (where the exponent is 1), representing $(\text{significand})\times 10^{4(\text{exponent})}$
+- Groups are sorted in descending order of their exponents and joined with a comma.
+
+```bnf
+<number>        ::= { <group> "," } <group>
+<group>         ::= <exponent> "Μ" <significand> [ <number-mark> ]
+                  | <significand> ; where exponent is 1
+<number-mark>   ::= "ʹ"
+<exponent>      ::= <simple-number>
+<significand>   ::= <simple-number>
+<simple-number> ::= Ionic number 1 to 9999
+```
+
+With slight modification, we can unambiguously represent _any_ natural numbers.
+
+- Each group has form `<exponent>Μ<significand>` or `<significand>` (where the exponent is 1), representing $(\text{significand})\times 10^{4(\text{exponent})}$
+- Group are sorted in descending order of their exponents and joined with a comma.
+- If a exponent consists of groups, put a trailing number-mark to every group in the exponent.
+    - E.g., group αΜγʹ,βʹΜκ consist of exponent αΜγ,β (= 3,0002) and significand κ (= 20).
+
+```bnf
+<number>        ::= <group(0)> <number-mark>
+                  | <groups(0)> <number-mark>
+<groups(n)>     ::= <group(n)> <number-mark>*n ( "," <group(n)>  <number-mark>*n )+
+                  ; n is a natural number.
+                  ; <number-mark> is repeated n times.
+<group(n)>      ::= <exponent(n)> "Μ" <significand>
+                  | <significand> ; where exponent is 1
+<number-mark>   ::= "ʹ"
+<exponent(n)>   ::= <group(n)>
+                  | <groups(n+1)>
+<significand>   ::= <simple-number>
+<simple-number> ::= Ionic number 1 to 9999
+```
+
+Examples:
+
+- αʹ $= 1$
+- αΜβ,γʹ $= 10000^1 \times 2 + 3$
+- βΜα,αΜγ,δʹ $= 10000^2 \times 1 + 10000^1 \times 3 + 4$
+- αΜβΜγʹ $= 10000^{10000^1 \times 2} \times 3$
+- αΜγʹ,βʹΜκʹ $= 10000^{10000^1 \times 3 + 2} + 20$
+- βΜαʹ,αʹΜγ,δʹ $= 10000^{10000^2 \times 1 + 1} \times 3 + 4$
+- αΜγΜδʹ,αΜβʹʹ,εʹʹΜϛʹ,ζʹΜη,θʹ $= 10000^{10000^{10000^1 \times 3} \times 4 + 10000^{10000^1 \times 2+5} \times 6 + 7} \times 8 + 9$
+
+### Archimedes
+
+TBU. He invented myriad-myriad based numerals in _The Sand Reckoner._
+
+## Fractions (TBU)
 
 ## Sexagesimal Systems
 ### Sexagesimal

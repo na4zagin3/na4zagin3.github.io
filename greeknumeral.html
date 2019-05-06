@@ -32,6 +32,7 @@
 <li><a href="#systems">Systems</a><ul>
 <li><a href="#decimal-systems-before-ionian-systems">Decimal Systems before Ionian Systems</a></li>
 <li><a href="#ionian-decimal-systems-or-ordinary-alphabetic-numerals">Ionian Decimal Systems or Ordinary Alphabetic Numerals</a></li>
+<li><a href="#fractions-tbu">Fractions (TBU)</a></li>
 <li><a href="#sexagesimal-systems">Sexagesimal Systems</a></li>
 </ul></li>
 <li><a href="#revisions">Revisions</a></li>
@@ -51,7 +52,7 @@ var app = Elm.Main.init({
 </script>
 <p>Inspired from Russell Cottrell’s <a href="http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm">Greek Number Converter</a>.</p>
 <h1 id="notations">Notations</h1>
-<p>In this document, I use myriad separators (e.g., 1234,5678,9012) rather than thousand separators (e.g., 123,456,789,012). For sexagesimal notations, I write 12°34′56″7‴8⁗ for degrees (360 degrees = 1 turn), 12<sup>p</sup>34′56″7‴8⁗ for segments (120 segments = 1 diameter; “p” stands for <em>pars</em>), and modern notation like 1,2;3,4 for general sexagesimal fractions. In modern sexagesimal notation, “,” is a sexagesimal separator and “;” is followed by a fraction part. Therefore <span class="math inline">\(\text{1,2;3,4} = 1 \times 60 + 2 + \frac{3}{60} + \frac{4}{60^2}\)</span>.</p>
+<p>In this document, I use myriad separators (e.g., 1234,5678,9012) rather than thousand separators (e.g., 123,456,789,012). For sexagesimal notations, I write 12°34′56″7‴8⁗ for degrees (360 degrees = 1 turn), 12<sup>p</sup>34′56″7‴8⁗ for segments (120 segments = 1 diameter; “p” stands for <em>partes</em> “parts”), and modern notation like 1,2;3,4 for general sexagesimal fractions. In modern sexagesimal notation, “,” is a sexagesimal separator and “;” is followed by a fraction part. Therefore <span class="math inline">\(\text{1,2;3,4} = 1 \times 60 + 2 + \frac{3}{60} + \frac{4}{60^2}\)</span>.</p>
 <h1 id="systems">Systems</h1>
 <h2 id="decimal-systems-before-ionian-systems">Decimal Systems before Ionian Systems</h2>
 <h3 id="attic">Attic</h3>
@@ -92,8 +93,61 @@ var app = Elm.Main.init({
 <p>This converter extends the system for numbers greater than 9999,9999, interpreting the system “putting Μ between every myriads.”</p>
 <h3 id="apollonius">Apollonius</h3>
 <p>Based on <span class="citation" data-cites="Hultsch1876">(Hultsch 1876, 1:2–29)</span>.</p>
-<h3 id="modified-apollonius">Modified Apollonius</h3>
+<h4 id="modified-apollonius">Modified Apollonius</h4>
 <p>I slightly modified the system to distinguish μ<sup>ο</sup> “μονάδες” vs. Μ<sup>α</sup> “μυριάδες ἁπλαῖ”, Μ<sup>β</sup> “μυριάδες διπλαῖ”, and so on.</p>
+<h4 id="russell-cottrells-notation">Russell Cottrell’s Notation</h4>
+<p><strong>This notation is not used by Ancient Greeks. As of now, there is no method to spell out numbers written in this notation.</strong></p>
+<p>This is based on a idea proposed by Russell Cottrell. Although his description is contradicting to his converter’s outputs, he gave some examples in his Greek Number Converter <a href="http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm">Greek Number Converter</a>:</p>
+<blockquote>
+<p>Partly because of limitations imposed by web page forms, I have modernized the rendering slightly by placing the power of the myriad beside, rather than above, the M; separating the groups by commas; and using the later convention of accent-like upper and lower numeral signs instead of an iota superscript.</p>
+<p>For example: 2,056,839,184 becomes βΜκʹ, αΜ͵εχπγ, ͵θρπδ. ͵θρπδ represents the final 9184, ͵εχπγ the 5683, with αΜ indicating that the latter is multiplied by the first power of M (10,000). βΜκʹ represents 20 multiplied by the second power of M (100,000,000).</p>
+</blockquote>
+<p>Ignoring unclear usage of “ʹ” his idea can be summarized as follows.</p>
+<ul>
+<li>Each group has form <code>&lt;exponent&gt;Μ&lt;significand&gt;</code> or <code>&lt;significand&gt;</code> (where the exponent is 1), representing <span class="math inline">\((\text{significand})\times 10^{4(\text{exponent})}\)</span></li>
+<li>Groups are sorted in descending order of their exponents and joined with a comma.</li>
+</ul>
+<pre class="bnf"><code>&lt;number&gt;        ::= { &lt;group&gt; &quot;,&quot; } &lt;group&gt;
+&lt;group&gt;         ::= &lt;exponent&gt; &quot;Μ&quot; &lt;significand&gt; [ &lt;number-mark&gt; ]
+                  | &lt;significand&gt; ; where exponent is 1
+&lt;number-mark&gt;   ::= &quot;ʹ&quot;
+&lt;exponent&gt;      ::= &lt;simple-number&gt;
+&lt;significand&gt;   ::= &lt;simple-number&gt;
+&lt;simple-number&gt; ::= Ionic number 1 to 9999</code></pre>
+<p>With slight modification, we can unambiguously represent <em>any</em> natural numbers.</p>
+<ul>
+<li>Each group has form <code>&lt;exponent&gt;Μ&lt;significand&gt;</code> or <code>&lt;significand&gt;</code> (where the exponent is 1), representing <span class="math inline">\((\text{significand})\times 10^{4(\text{exponent})}\)</span></li>
+<li>Group are sorted in descending order of their exponents and joined with a comma.</li>
+<li>If a exponent consists of groups, put a trailing number-mark to every group in the exponent.
+<ul>
+<li>E.g., group αΜγʹ,βʹΜκ consist of exponent αΜγ,β (= 3,0002) and significand κ (= 20).</li>
+</ul></li>
+</ul>
+<pre class="bnf"><code>&lt;number&gt;        ::= &lt;group(0)&gt; &lt;number-mark&gt;
+                  | &lt;groups(0)&gt; &lt;number-mark&gt;
+&lt;groups(n)&gt;     ::= &lt;group(n)&gt; &lt;number-mark&gt;*n ( &quot;,&quot; &lt;group(n)&gt;  &lt;number-mark&gt;*n )+
+                  ; n is a natural number.
+                  ; &lt;number-mark&gt; is repeated n times.
+&lt;group(n)&gt;      ::= &lt;exponent(n)&gt; &quot;Μ&quot; &lt;significand&gt;
+                  | &lt;significand&gt; ; where exponent is 1
+&lt;number-mark&gt;   ::= &quot;ʹ&quot;
+&lt;exponent(n)&gt;   ::= &lt;group(n)&gt;
+                  | &lt;groups(n+1)&gt;
+&lt;significand&gt;   ::= &lt;simple-number&gt;
+&lt;simple-number&gt; ::= Ionic number 1 to 9999</code></pre>
+<p>Examples:</p>
+<ul>
+<li>αʹ <span class="math inline">\(= 1\)</span></li>
+<li>αΜβ,γʹ <span class="math inline">\(= 10000^1 \times 2 + 3\)</span></li>
+<li>βΜα,αΜγ,δʹ <span class="math inline">\(= 10000^2 \times 1 + 10000^1 \times 3 + 4\)</span></li>
+<li>αΜβΜγʹ <span class="math inline">\(= 10000^{10000^1 \times 2} \times 3\)</span></li>
+<li>αΜγʹ,βʹΜκʹ <span class="math inline">\(= 10000^{10000^1 \times 3 + 2} + 20\)</span></li>
+<li>βΜαʹ,αʹΜγ,δʹ <span class="math inline">\(= 10000^{10000^2 \times 1 + 1} \times 3 + 4\)</span></li>
+<li>αΜγΜδʹ,αΜβʹʹ,εʹʹΜϛʹ,ζʹΜη,θʹ <span class="math inline">\(= 10000^{10000^{10000^1 \times 3} \times 4 + 10000^{10000^1 \times 2+5} \times 6 + 7} \times 8 + 9\)</span></li>
+</ul>
+<h3 id="archimedes">Archimedes</h3>
+<p>TBU. He invented myriad-myriad based numerals in <em>The Sand Reckoner.</em></p>
+<h2 id="fractions-tbu">Fractions (TBU)</h2>
 <h2 id="sexagesimal-systems">Sexagesimal Systems</h2>
 <h3 id="sexagesimal">Sexagesimal</h3>
 <p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:48–61)</span>.</p>
