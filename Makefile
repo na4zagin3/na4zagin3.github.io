@@ -8,5 +8,7 @@ all: pages
 
 pages: index.html greeknumeral.html
 
+greeknumeral.html: PANDOC_OPTS=--mathjax --toc --toc-depth=2
+
 %.html: %.md $(CSS) $(BIB) Makefile
-	pandoc --bibliography=$(BIB) -s --css=$(CSS) -o $@ $<
+	pandoc --bibliography=$(BIB) -s --css=$(CSS) -o $@ $(PANDOC_OPTS) $<

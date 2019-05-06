@@ -5,7 +5,8 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="SAKAMOTO Noriaki (@na4zagin3)" />
-  <title>Greek Number Converter</title>
+  <meta name="dcterms.date" content="2019-05-06" />
+  <title>Comprehensive Greek Number Converter</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -13,16 +14,32 @@
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <link rel="stylesheet" href="pandoc.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Greek Number Converter</h1>
+<h1 class="title">Comprehensive Greek Number Converter</h1>
 <p class="author">SAKAMOTO Noriaki (@na4zagin3)</p>
+<p class="date">2019-05-06</p>
 </header>
+<nav id="TOC">
+<ul>
+<li><a href="#converter">Converter</a></li>
+<li><a href="#notations">Notations</a></li>
+<li><a href="#systems">Systems</a><ul>
+<li><a href="#decimal-systems-before-ionian-systems">Decimal Systems before Ionian Systems</a></li>
+<li><a href="#ionian-decimal-systems-or-ordinary-alphabetic-numerals">Ionian Decimal Systems or Ordinary Alphabetic Numerals</a></li>
+<li><a href="#sexagesimal-systems">Sexagesimal Systems</a></li>
+</ul></li>
+<li><a href="#revisions">Revisions</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</nav>
 <p>Source code at GitHub <a href="https://github.com/na4zagin3/elm-grcnum">na4zagin3/elm-grcnum</a>.</p>
+<h1 id="converter">Converter</h1>
 <script src="elm.min.js"></script>
 <div id="elm">
 
@@ -32,28 +49,33 @@ var app = Elm.Main.init({
   node: document.getElementById('elm')
 });
 </script>
-<p>Inspired from Russell Cottrell’s <a href="http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm">Grek Number Converter</a>.</p>
+<p>Inspired from Russell Cottrell’s <a href="http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm">Greek Number Converter</a>.</p>
+<h1 id="notations">Notations</h1>
+<p>In this document, I use myriad separators (e.g., 1234,5678,9012) rather than thousand separators (e.g., 123,456,789,012). For sexagesimal notations, I use 12°34′56″7‴8⁗ for degrees (360 degrees = 1 turn), 12<sup>p</sup>34′56″7‴8⁗ for segments (120 segments = 1 diameter), and modern notation like 1,2;3,4 for general sexagesimal fractions. In modern sexagesimal notation, “,” is a sexagesimal separater and “;” is followed by a fraction part. Therefore <span class="math inline">\(\text{1,2;3,4} = 1 \times 60 + 2 = \frac{3}{60} + \frac{4}{60^2}\)</span>.</p>
 <h1 id="systems">Systems</h1>
-<h2 id="attic">Attic</h2>
+<h2 id="decimal-systems-before-ionian-systems">Decimal Systems before Ionian Systems</h2>
+<h3 id="attic">Attic</h3>
 <p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:41–42)</span>.</p>
-<h2 id="common-ionian">Common Ionian</h2>
+<h2 id="ionian-decimal-systems-or-ordinary-alphabetic-numerals">Ionian Decimal Systems or Ordinary Alphabetic Numerals</h2>
+<h3 id="common-ionian">Common Ionian</h3>
 <p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:42–44)</span>.</p>
-<h2 id="diophantus">Diophantus</h2>
-<p>Based on format used Diophantus <em>Arithmetica</em> iv. 18 <span class="citation" data-cites="GMT2">(Thomas 1993, 2:550)</span>, where 262143 (κϛ.͵βρμγ) appears as numerator (contrary to modern mathematics notation, a numerator is located below a denominator).</p>
+<h3 id="diophantus">Diophantus</h3>
+<p>Based on format used Diophantus <em>Arithmetica</em> iv. 18 <span class="citation" data-cites="GMT2">(Thomas 1993, 2:550)</span>, where 26,2143 (κϛ.͵βρμγ) appears as a numerator (Note: contrary to modern mathematics notation, a numerator is located below a denominator).</p>
 <blockquote>
-<p>Ἐπὶ τὰς ὑποστάσεισ! ἔσται ὁ α<sup>ος</sup> ἑνὸς ιϛ<sup>ον</sup>, ὁ δὲ β<sup>ος</sup> <span style="display: inline-flex; flex-direction: column; vertical-align: middle;"><span style="text-align: center; line-height: 1em;">͵δϟϛ</span><span style="text-align: center; line-height: 1em;">κϛ. ͵βρμγ</span></span>.</p>
+<p>Ἐπὶ τὰς ὑποστάσεις· ἔσται ὁ α<sup>ος</sup> ἑνὸς ιϛ<sup>ον</sup>, ὁ δὲ β<sup>ος</sup> <span style="display: inline-flex; flex-direction: column; vertical-align: middle;"><span style="text-align: center; line-height: 1em;">͵δϟϛ</span><span style="text-align: center; line-height: 1em;">κϛ. ͵βρμγ</span></span>.</p>
 </blockquote>
 <p>and <span class="citation" data-cites="Heath1897">(Heath 1897, lxix)</span></p>
 <blockquote>
 <p>Diophantus denoted myriads followed by thousands by the ordinary signs for numbers of units, only separating them by a dot from the thousands. Thus for 3,069,000 he writes and for 331776.</p>
 </blockquote>
-<p>This converter does not yet support <span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span> prefix although <span class="citation" data-cites="GMT1">(Thomas 1991, 1:44)</span> says</p>
+<p>This converter does not yet support <span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span> prefix described in <span class="citation" data-cites="GMT1">(Thomas 1991, 1:44)</span></p>
 <blockquote>
 <p>Another method is to use the sign Μ or <span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span> for the myriad and to put the number of myriads after it, separated by a dot from the thousands.</p>
 <p>Thus</p>
 <p><span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span><span><span style="text-decoration: overline; line-height: 2em;">ρδ</span><span>.<wbr></span><span style="text-decoration: overline; line-height: 2em;">͵ηφοϛ</span></span> (Diophantus vi. 22, ed. Tannery 446. 11).</p>
 </blockquote>
-<h2 id="heron">Heron</h2>
+<p>This converter extended the system so that it can represents numbers greater than 9999,9999.</p>
+<h3 id="heron">Heron</h3>
 <p><span class="citation" data-cites="GMT1">(Thomas 1991, 1:44)</span> says</p>
 <blockquote>
 <p>In a third method the symbol M is not used, but the symbol representing the number of myriads has two dots placed over it.</p>
@@ -65,13 +87,14 @@ var app = Elm.Main.init({
 <blockquote>
 <p>Sometimes myriads were represented by the ordinary letters with two dots above, as ρ̈ = 100 myriads (1,000,000), and myriads of myriads with two pairs of dots, as ϊ̈ for 10 myriad-myriads (1,000,000,000).</p>
 </blockquote>
-<h2 id="aristarchus">Aristarchus</h2>
+<h3 id="aristarchus">Aristarchus</h3>
 <p>Although the algorithm is based on <a href="http://www-history.mcs.st-andrews.ac.uk/HistTopics/Greek_numbers.html">Greek number systems</a>, which is full of mistakes, it is not reliable. I’m now trying to find reliable sources.</p>
-<h2 id="apollonius">Apollonius</h2>
+<h3 id="apollonius">Apollonius</h3>
 <p>Based on <span class="citation" data-cites="Hultsch1876">(Hultsch 1876, 1:2–29)</span>.</p>
-<h2 id="modified-apollonius">Modified Apollonius</h2>
+<h3 id="modified-apollonius">Modified Apollonius</h3>
 <p>I slightly modified the system to distinguish μ<sup>ο</sup> “μονάδες” vs. Μ<sup>α</sup> “μυριάδες ἁπλαῖ”, Μ<sup>β</sup> “μυριάδες διπλαῖ”, and so on.</p>
-<h2 id="sexagesimal">Sexagesimal</h2>
+<h2 id="sexagesimal-systems">Sexagesimal Systems</h2>
+<h3 id="sexagesimal">Sexagesimal</h3>
 <p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:48–61)</span>.</p>
 <ul>
 <li>200′15″: ἀπὸ τῶν λοιπῶν πρώτων ἑξηκοστῶν <span style="text-decoration: overline;">σ</span> καὶ δευτέρων <span style="text-decoration: overline;">ιε</span> <span class="citation" data-cites="GMT1">(Thomas 1991, 1:50)</span></li>
@@ -79,7 +102,7 @@ var app = Elm.Main.init({
 <li>67°4′: <span style="text-decoration: overline;">ξζ</span> <span style="text-decoration: overline;">δ</span> <span class="citation" data-cites="GMT1">(Thomas 1991, 1:58)</span></li>
 <li>134°8′: <span style="text-decoration: overline;">ρλδ</span> <span style="text-decoration: overline;">η</span> <span class="citation" data-cites="GMT1">(Thomas 1991, 1:58)</span></li>
 </ul>
-<h2 id="sexagesimal-ptolemy">Sexagesimal Ptolemy</h2>
+<h3 id="sexagesimal-ptolemy">Sexagesimal Ptolemy</h3>
 <p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:47)</span></p>
 <blockquote>
 <p>In his sexagesimal notation, Ptolemy used the symbol <strong>O</strong> to stand for οὐδεμία μοῖρα or οὐδὲν ἑξηκοστόν. The diverse views which have been held on this symbol from the time of Delambre are summed up by Loria (<span lang="it"><em>Le scienze esatte nell’ antica Grecia</span>, p.761</em>) in the words: “<span lang="it">In base ai documenti scoperti e decifrati sino ad oggi, siamo autorizzati a negare che i Greci usasserolo zero nel senso e nel modo in cui lo adoperiamo noi.</span>”</p>
@@ -88,6 +111,9 @@ var app = Elm.Main.init({
 <ul>
 <li>0<sup>p</sup>47′8″: Ο <span><span style="text-decoration: overline; line-height: 2em;">μζ</span></span> <span><span style="text-decoration: overline; line-height: 2em;">η</span></span> <span class="citation" data-cites="GMT2">(Thomas 1993, 2:430)</span></li>
 </ul>
+<h1 id="revisions">Revisions</h1>
+<p>All the revisions of this page can be retrieved from GitHub <a href="https://github.com/na4zagin3/na4zagin3.github.io">na4zagin3/na4zagin3.github.io</a>.</p>
+<p>2019-05-06: Entirely rewritten. Fixed Apollonius method to support monad prefix μ<sup>ο</sup>.</p>
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
 <div id="ref-Heath1897">
