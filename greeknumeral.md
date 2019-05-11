@@ -11,8 +11,54 @@ Source code at GitHub [na4zagin3/elm-grcnum](https://github.com/na4zagin3/elm-gr
 <script src="elm.min.js"></script>
 <div id="elm"></div>
 <script>
+var translations =
+  { extended: " (extended)"
+  , tooBig: "too big"
+  , numberToConvert: "Number to convert"
+  , convertFrom: "Converted from"
+  , attic: 
+        { href: "#attic"
+        , label: "Attic"
+        }
+  , commonIonian: 
+        { href: "#common-ionian"
+        , label: "Common Ionian"
+        }
+  , diophantus: 
+        { href: "#diophantus"
+        , label: "Diophantus"
+        }
+  , aristarchus: 
+        { href: "#aristarchus"
+        , label: "Aristarchus"
+        }
+  , apollonius: 
+        { href: "#apollonius"
+        , label: "Apollonius"
+        }
+  , modifiedApollonius: 
+        { href: "#modified-apollonius"
+        , label: "Modified Apollonius"
+        }
+  , sexagesimalTriple: 
+        { href: null
+        , label: "Sexagesimal triple (in seconds)"
+        }
+  , sexagesimal: 
+        { href: "#sexagesimal"
+        , label: "Sexagesimal (EXPERIMENTAL)"
+        }
+  , sexagesimalPtolemy: 
+        { href: "#sexagesimal-ptolemy"
+        , label: "Sexagesimal Ptolemy (EXPERIMENTAL)"
+        }
+  }
+
 var app = Elm.Main.init({
-  node: document.getElementById('elm')
+  node: document.getElementById('elm'),
+  flags: {
+    translations: translations
+  }
 });
 </script>
 
