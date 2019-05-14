@@ -16,6 +16,11 @@ var translations =
   , tooBig: "too big"
   , numberToConvert: "Number to convert"
   , convertFrom: "Converted from"
+  , decimalButton: "decimal"
+  , decimalFormat: "Input a number without separators. E.g., 1234"
+  , sexagesimalButton: "sexagesimal"
+  , sexagesimalFormat: "Input in modern sexagesimal notation. E.g., 12;34,5 (meaning 12°34′5″)"
+
   , attic: 
         { href: "#attic"
         , label: "Attic"
@@ -42,7 +47,7 @@ var translations =
         }
   , sexagesimalTriple: 
         { href: null
-        , label: "Sexagesimal triple (in seconds)"
+        , label: "Sexagesimal triple"
         }
   , sexagesimal: 
         { href: "#sexagesimal"
