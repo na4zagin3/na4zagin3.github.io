@@ -14,10 +14,13 @@ Source code at GitHub [na4zagin3/elm-grcnum](https://github.com/na4zagin3/elm-gr
 var translations =
   { extended: " (extended)"
   , tooBig: "too big"
+  , inputIn: "Input in "
   , numberToConvert: "Number to convert"
   , convertFrom: "Converted from"
   , decimalButton: "decimal"
   , decimalFormat: "Input a number without separators. E.g., 1234"
+  , fractionButton: "fraction"
+  , fractionFormat: "Input a fraction or a series of unit fractions. E.g., 355/113 or 1/2+1/3+1/5"
   , sexagesimalButton: "sexagesimal"
   , sexagesimalFormat: "Input in modern sexagesimal notation. E.g., 12;34,5 (meaning 12°34′5″)"
 
@@ -44,6 +47,14 @@ var translations =
   , modifiedApollonius: 
         { href: "#modified-apollonius"
         , label: "Modified Apollonius"
+        }
+  , fracDiophantus:
+        { href: "#fraction-diophantus"
+        , label: "Diophantus"
+        }
+  , fracHeron:
+        { href: "#fraction-heron"
+        , label: "Heron"
         }
   , sexagesimalTriple: 
         { href: null
