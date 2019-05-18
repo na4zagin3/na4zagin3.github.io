@@ -2,7 +2,7 @@
 % SAKAMOTO Noriaki (\@na4zagin3)
 
 ---
-date: 2019-05-06
+date: 2019-05-18
 ...
 
 Source code at GitHub [na4zagin3/elm-grcnum](https://github.com/na4zagin3/elm-grcnum).
@@ -24,6 +24,16 @@ var translations =
   , sexagesimalButton: "sexagesimal"
   , sexagesimalFormat: "Input in modern sexagesimal notation. E.g., 12;34,5 (meaning 12°34′5″)"
 
+  , experimentalNote: "* Experimental"
+
+  , cardinalSingMascDesc:
+        { href: "#cardinal"
+        , label: "Cardinal (nominative masculine form, descending order)*"
+        }
+  , adverbial:
+        { href: "#adverbial"
+        , label: "Adverbial*"
+        }
   , attic: 
         { href: "#attic"
         , label: "Attic"
@@ -48,6 +58,7 @@ var translations =
         { href: "#modified-apollonius"
         , label: "Modified Apollonius"
         }
+
   , fracDiophantus:
         { href: "#fraction-diophantus"
         , label: "Diophantus"
@@ -86,6 +97,33 @@ For sexagesimal notations, I write 12°34′56″7‴8⁗ for degrees (360 degre
 In modern sexagesimal notation, “,” is a sexagesimal separator and “;” is followed by a fraction part. Therefore $\text{1,2;3,4} = 1 \times 60 + 2 + \frac{3}{60} + \frac{4}{60^2}$.
 
 # Systems
+## Numerals
+In every language numbers are represented in sound, therefore this converter firstly spell out the numbers.
+
+This section is based on [@Smyth1920, §§347--354].
+
+This converter uses Attic dialect, therefore
+geminated consonant ττ appears instead of σσ in Ionic dialect and Koiné Greek. E.g., τέτταρες instead of τέσσαρες.
+
+## Cardinal
+Based on [@Smyth1920, §§347,349--350].
+
+In Attic dialect, 13 and 14 are represented by a compound number rather than compound words, thus τρεῖς καὶ δέκα and τέτταρες καὶ δέκα rather than τρεισκαίδεκα and τετταρεσκαίδεκα, respectively.
+
+εἴκοσι(ν) 20 has a [movable nu](https://en.wikipedia.org/wiki/Movable_nu), which appears as εἴκοσι or εἴκοσιν.
+
+Word order are usually one of the following possible orders:
+
+- Descending order with conjunction: _ones_ καὶ _tens_ καὶ _hundreds_ καὶ _thousands_
+- Ascending order with conjunction: _thousands_ καὶ _hundreds_ καὶ _tens_ καὶ _ones_
+- Ascending order without conjunction: _thousands_ _hundreds_ _tens_ _ones_
+
+## Ordinal
+(WIP)
+
+## Adverbial
+Based on [@Smyth1920, §§347].
+
 ## Decimal Systems before Ionian Systems
 ### Attic
 Based on [@GMT1, pp. 41--42].
@@ -246,5 +284,6 @@ and
 All the revisions of this page can be retrieved from GitHub [na4zagin3/na4zagin3.github.io](https://github.com/na4zagin3/na4zagin3.github.io).
 
 2019-05-06: Entirely rewritten. Fixed Apollonius method to support monad prefix μ^ο^.
+2019-05-18: Output in words too.
 
 # References

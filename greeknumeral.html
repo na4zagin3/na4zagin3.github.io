@@ -30,6 +30,10 @@
 <li><a href="#converter">Converter</a></li>
 <li><a href="#notations">Notations</a></li>
 <li><a href="#systems">Systems</a><ul>
+<li><a href="#numerals">Numerals</a></li>
+<li><a href="#cardinal">Cardinal</a></li>
+<li><a href="#ordinal">Ordinal</a></li>
+<li><a href="#adverbial">Adverbial</a></li>
 <li><a href="#decimal-systems-before-ionian-systems">Decimal Systems before Ionian Systems</a></li>
 <li><a href="#ionian-decimal-systems-or-ordinary-alphabetic-numerals">Ionian Decimal Systems or Ordinary Alphabetic Numerals</a></li>
 <li><a href="#fractions-tbu">Fractions (TBU)</a></li>
@@ -59,6 +63,16 @@ var translations =
   , sexagesimalButton: "sexagesimal"
   , sexagesimalFormat: "Input in modern sexagesimal notation. E.g., 12;34,5 (meaning 12°34′5″)"
 
+  , experimentalNote: "* Experimental"
+
+  , cardinalSingMascDesc:
+        { href: "#cardinal"
+        , label: "Cardinal (nominative masculine form, descending order)*"
+        }
+  , adverbial:
+        { href: "#adverbial"
+        , label: "Adverbial*"
+        }
   , attic: 
         { href: "#attic"
         , label: "Attic"
@@ -83,6 +97,7 @@ var translations =
         { href: "#modified-apollonius"
         , label: "Modified Apollonius"
         }
+
   , fracDiophantus:
         { href: "#fraction-diophantus"
         , label: "Diophantus"
@@ -116,6 +131,24 @@ var app = Elm.Main.init({
 <h1 id="notations">Notations</h1>
 <p>In this document, I use myriad separators (e.g., 1234,5678,9012) rather than thousand separators (e.g., 123,456,789,012). For sexagesimal notations, I write 12°34′56″7‴8⁗ for degrees (360 degrees = 1 turn), 12<sup>p</sup>34′56″7‴8⁗ for segments (120 segments = 1 diameter; “p” stands for <em>partes</em> “parts”), and modern notation like 1,2;3,4 for general sexagesimal fractions. In modern sexagesimal notation, “,” is a sexagesimal separator and “;” is followed by a fraction part. Therefore <span class="math inline">\(\text{1,2;3,4} = 1 \times 60 + 2 + \frac{3}{60} + \frac{4}{60^2}\)</span>.</p>
 <h1 id="systems">Systems</h1>
+<h2 id="numerals">Numerals</h2>
+<p>In every language numbers are represented in sound, therefore this converter firstly spell out the numbers.</p>
+<p>This section is based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 347–354)</span>.</p>
+<p>This converter uses Attic dialect, therefore geminated consonant ττ appears instead of σσ in Ionic dialect and Koiné Greek. E.g., τέτταρες instead of τέσσαρες.</p>
+<h2 id="cardinal">Cardinal</h2>
+<p>Based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, secs. 347, 349–350)</span>.</p>
+<p>In Attic dialect, 13 and 14 are represented by a compound number rather than compound words, thus τρεῖς καὶ δέκα and τέτταρες καὶ δέκα rather than τρεισκαίδεκα and τετταρεσκαίδεκα, respectively.</p>
+<p>εἴκοσι(ν) 20 has a <a href="https://en.wikipedia.org/wiki/Movable_nu">movable nu</a>, which appears as εἴκοσι or εἴκοσιν.</p>
+<p>Word order are usually one of the following possible orders:</p>
+<ul>
+<li>Descending order with conjunction: <em>ones</em> καὶ <em>tens</em> καὶ <em>hundreds</em> καὶ <em>thousands</em></li>
+<li>Ascending order with conjunction: <em>thousands</em> καὶ <em>hundreds</em> καὶ <em>tens</em> καὶ <em>ones</em></li>
+<li>Ascending order without conjunction: <em>thousands</em> <em>hundreds</em> <em>tens</em> <em>ones</em></li>
+</ul>
+<h2 id="ordinal">Ordinal</h2>
+<p>(WIP)</p>
+<h2 id="adverbial">Adverbial</h2>
+<p>Based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 347)</span>.</p>
 <h2 id="decimal-systems-before-ionian-systems">Decimal Systems before Ionian Systems</h2>
 <h3 id="attic">Attic</h3>
 <p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:41–42)</span>.</p>
@@ -238,6 +271,9 @@ var app = Elm.Main.init({
 </div>
 <div id="ref-Hultsch1876">
 <p>Hultsch, Fridericus, ed. 1876. <em>Pappi Alexandrini Collectionis Quae Supersunt</em>. Vol. 1. Berolini: Apud Weidmannos.</p>
+</div>
+<div id="ref-Smyth1920">
+<p>Smyth, Herbert Weir. 1920. <em>Greek Grammar for Colleges</em>. American Book Company.</p>
 </div>
 <div id="ref-GMT1">
 <p>Thomas, Ivor, ed. 1991. <em>Greek Methematical Works: Thales to Euclid</em>. Vol. 1. Loeb Classical Library. London, England: Harvard University Press.</p>
