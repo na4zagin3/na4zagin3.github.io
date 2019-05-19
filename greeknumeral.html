@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="SAKAMOTO Noriaki (@na4zagin3)" />
-  <meta name="dcterms.date" content="2019-05-06" />
+  <meta name="dcterms.date" content="2019-05-18" />
   <title>Comprehensive Greek Number Converter</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
@@ -23,7 +23,7 @@
 <header id="title-block-header">
 <h1 class="title">Comprehensive Greek Number Converter</h1>
 <p class="author">SAKAMOTO Noriaki (@na4zagin3)</p>
-<p class="date">2019-05-06</p>
+<p class="date">2019-05-18</p>
 </header>
 <nav id="TOC">
 <ul>
@@ -52,7 +52,7 @@
 <script>
 var translations =
   { extended: " (extended)"
-  , tooBig: "too big"
+  , tooBig: "unsupported"
   , inputIn: "Input in "
   , numberToConvert: "Number to convert"
   , convertFrom: "Converted from"
@@ -263,7 +263,7 @@ var app = Elm.Main.init({
 </ul>
 <h1 id="revisions">Revisions</h1>
 <p>All the revisions of this page can be retrieved from GitHub <a href="https://github.com/na4zagin3/na4zagin3.github.io">na4zagin3/na4zagin3.github.io</a>.</p>
-<p>2019-05-06: Entirely rewritten. Fixed Apollonius method to support monad prefix μ<sup>ο</sup>.</p>
+<p>2019-05-06: Entirely rewritten. Fixed Apollonius method to support monad prefix μ<sup>ο</sup>. 2019-05-18: Output in words too.</p>
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
 <div id="ref-Heath1897">

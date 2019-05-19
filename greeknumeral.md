@@ -13,7 +13,7 @@ Source code at GitHub [na4zagin3/elm-grcnum](https://github.com/na4zagin3/elm-gr
 <script>
 var translations =
   { extended: " (extended)"
-  , tooBig: "too big"
+  , tooBig: "unsupported"
   , inputIn: "Input in "
   , numberToConvert: "Number to convert"
   , convertFrom: "Converted from"
