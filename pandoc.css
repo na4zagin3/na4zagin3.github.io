@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,700,700i&display=swap&subset=greek,greek-ext,latin-ext');
+
 body {
     /* margin: auto; */
     margin-right: 1em;
@@ -8,7 +10,7 @@ body {
     border-left: 1px solid black;
     border-right: 1px solid black;
     color: black;
-    font-family: Palatino, "Palatino Linotype", "Linux Libertine O", "Linux Libertine", serif;
+    font-family: 'EB Garamond', Palatino, "Palatino Linotype", "Linux Libertine O", "Linux Libertine", serif;
     font-size: 100%;
     line-height: 1.4;
     color: #333; 

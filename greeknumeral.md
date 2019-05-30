@@ -2,7 +2,7 @@
 % SAKAMOTO Noriaki (\@na4zagin3)
 
 ---
-date: 2019-05-18
+date: 2019-05-30
 ...
 
 Source code at GitHub [na4zagin3/elm-grcnum](https://github.com/na4zagin3/elm-grcnum).
@@ -96,16 +96,17 @@ In this document, I use myriad separators (e.g., 1234,5678,9012) rather than tho
 For sexagesimal notations, I write 12°34′56″7‴8⁗ for degrees (360 degrees = 1 turn), 12^p^34′56″7‴8⁗ for segments (120 segments = 1 diameter; “p” stands for _partes_ “parts”), and modern notation like 1,2;3,4  for general sexagesimal fractions.
 In modern sexagesimal notation, “,” is a sexagesimal separator and “;” is followed by a fraction part. Therefore $\text{1,2;3,4} = 1 \times 60 + 2 + \frac{3}{60} + \frac{4}{60^2}$.
 
+Throughout the document Greek texts smallcase and uppercase letters are distinguished (e.g., μ vs. Μ) for readability and to follow modern printing conventions. That distinction _did not exist_ in Ancient Greek; minuscule script was invented in 9th century [@Irigoin1996, p.69].
+
 # Systems
 ## Numerals
 In every language numbers are represented in sound, therefore this converter firstly spell out the numbers.
 
-This section is based on [@Smyth1920, §§347--354].
-
 This converter uses Attic dialect, therefore
 geminated consonant ττ appears instead of σσ in Ionic dialect and Koiné Greek. E.g., τέτταρες instead of τέσσαρες.
 
-## Cardinal
+
+### Cardinal
 Based on [@Smyth1920, §§347,349--350].
 
 In Attic dialect, 13 and 14 are represented by a compound number rather than compound words, thus τρεῖς καὶ δέκα and τέτταρες καὶ δέκα rather than τρεισκαίδεκα and τετταρεσκαίδεκα, respectively.
@@ -118,10 +119,37 @@ Word order are usually one of the following possible orders:
 - Ascending order with conjunction: _thousands_ καὶ _hundreds_ καὶ _tens_ καὶ _ones_
 - Ascending order without conjunction: _thousands_ _hundreds_ _tens_ _ones_
 
-## Ordinal
+#### Common systems for numbers greater than 9999
+In this section, emphasis and quoted translations to Greek texts are mine.
+
+There are two kinds of numerals to represent numbers greater than 9999. Here I call them _n_-κισμύριοι system and _n_ μυριάδες system.
+
+- _n_-κισμύριοι system: A compound word of adverbial form and μύριοι (meaning 1,0000)
+    - τῶν **δισμυρίων** (2,0000 gen.) Polyb.Hist.1.29.7 
+    - εἰς **δισμυρίους ὀκτακισχιλίους** (2,8000 acc.) Polyb.Hist.2.65.5
+    - **μυρίους χιλίους ὀκτακοσίους πεντήκοντα** (1,1850 acc.) Polyb.Hist.3.33.16
+    - ὑπὲρ τοὺς **ἑξακισχιλίους καὶ μυρίους** (1,6000 acc.) σταδίους. Polyb.Hist.3.39.3
+    - **πεντηκοντακισμυρίους καὶ τετρακισμυρίους** (54,0000 acc.). Polyb.Hist.21.43.19
+- _n_ μυριάδες system: A cardinal number and μυριάδες (meaning 1,0000)
+    - **δύο μυριάδας** (2,0000 acc), Polyb.Hist.2.65.7
+    - **πέντε μυριάδων** (5,0000 gen.) Polyb.Hist.1.18.7
+    - ὑπὲρ **πεντεκαίδεκα μυριάδας** (15,0000 acc.) Polyb.Hist.1.26.8
+    - περὶ **τέτταρας καὶ δέκα μυριάδας** (14,0000 acc.) Polyb.Hist.1.26.7
+    - ἡ πληθὺς πεζῶν μὲν εἰς **εἴκοσι καὶ πέντε** κατελέχθησαν **μυριάδες** (25,0000), ἱππέων δ᾽ ἐπὶ ταῖς **δύο μυριάσιν** ἐπῆσαν ἔτι **τρεῖς χιλιάδες** (2,3000). Polyb.Hist.2.24.14
+
+Both system were even used in the same sentence like
+πεζῶν μὲν ἔχων εἰς **ἐννέα μυριάδας** (9,0000 acc.), ἱππεῖς δὲ περὶ **μυρίους καὶ δισχιλίους** (1,2000 acc.).
+Polyb.Hist.3.35.1
+
+Generally speaking, _n_-κισμύριοι system is limited for smaller numbers namely $n \le 7$. A notable exception is Polybius’s
+πεντηκοντακισμυρίους καὶ τετρακισμυρίους Polyb.Hist.21.43.19, representing 54,0000.
+On the other hand, _n_ μυριάδες system can be used for bigger numbers. Especially, mathematical documents prefers _n_ μυριάδες system over _n_-κισμύριοι system.
+
+
+### Ordinal
 (WIP)
 
-## Adverbial
+### Adverbial
 Based on [@Smyth1920, §§347].
 
 ## Decimal Systems before Ionian Systems
@@ -285,5 +313,23 @@ All the revisions of this page can be retrieved from GitHub [na4zagin3/na4zagin3
 
 2019-05-06: Entirely rewritten. Fixed Apollonius method to support monad prefix μ^ο^.
 2019-05-18: Output in words too.
+
+# Abbreviations
+## General
+acc.
+: accusative
+
+dat.
+: dative
+
+gen.
+: genitive
+
+nom.
+: nominative
+
+## Texts
+Polyb.Hist.
+: [Polybius, _Histories_](http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0233)
 
 # References

@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="SAKAMOTO Noriaki (@na4zagin3)" />
-  <meta name="dcterms.date" content="2019-05-18" />
+  <meta name="dcterms.date" content="2019-05-30" />
   <title>Comprehensive Greek Number Converter</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
@@ -23,7 +23,7 @@
 <header id="title-block-header">
 <h1 class="title">Comprehensive Greek Number Converter</h1>
 <p class="author">SAKAMOTO Noriaki (@na4zagin3)</p>
-<p class="date">2019-05-18</p>
+<p class="date">2019-05-30</p>
 </header>
 <nav id="TOC">
 <ul>
@@ -31,15 +31,16 @@
 <li><a href="#notations">Notations</a></li>
 <li><a href="#systems">Systems</a><ul>
 <li><a href="#numerals">Numerals</a></li>
-<li><a href="#cardinal">Cardinal</a></li>
-<li><a href="#ordinal">Ordinal</a></li>
-<li><a href="#adverbial">Adverbial</a></li>
 <li><a href="#decimal-systems-before-ionian-systems">Decimal Systems before Ionian Systems</a></li>
 <li><a href="#ionian-decimal-systems-or-ordinary-alphabetic-numerals">Ionian Decimal Systems or Ordinary Alphabetic Numerals</a></li>
 <li><a href="#fractions-tbu">Fractions (TBU)</a></li>
 <li><a href="#sexagesimal-systems">Sexagesimal Systems</a></li>
 </ul></li>
 <li><a href="#revisions">Revisions</a></li>
+<li><a href="#abbreviations">Abbreviations</a><ul>
+<li><a href="#general">General</a></li>
+<li><a href="#texts">Texts</a></li>
+</ul></li>
 <li><a href="#references">References</a></li>
 </ul>
 </nav>
@@ -130,12 +131,12 @@ var app = Elm.Main.init({
 <p>Inspired from Russell Cottrell’s <a href="http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm">Greek Number Converter</a>.</p>
 <h1 id="notations">Notations</h1>
 <p>In this document, I use myriad separators (e.g., 1234,5678,9012) rather than thousand separators (e.g., 123,456,789,012). For sexagesimal notations, I write 12°34′56″7‴8⁗ for degrees (360 degrees = 1 turn), 12<sup>p</sup>34′56″7‴8⁗ for segments (120 segments = 1 diameter; “p” stands for <em>partes</em> “parts”), and modern notation like 1,2;3,4 for general sexagesimal fractions. In modern sexagesimal notation, “,” is a sexagesimal separator and “;” is followed by a fraction part. Therefore <span class="math inline">\(\text{1,2;3,4} = 1 \times 60 + 2 + \frac{3}{60} + \frac{4}{60^2}\)</span>.</p>
+<p>Throughout the document Greek texts smallcase and uppercase letters are distinguished (e.g., μ vs. Μ) for readability and to follow modern printing conventions. That distinction <em>did not exist</em> in Ancient Greek; minuscule script was invented in 9th century <span class="citation" data-cites="Irigoin1996">(Irigoin 1996, 69)</span>.</p>
 <h1 id="systems">Systems</h1>
 <h2 id="numerals">Numerals</h2>
 <p>In every language numbers are represented in sound, therefore this converter firstly spell out the numbers.</p>
-<p>This section is based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 347–354)</span>.</p>
 <p>This converter uses Attic dialect, therefore geminated consonant ττ appears instead of σσ in Ionic dialect and Koiné Greek. E.g., τέτταρες instead of τέσσαρες.</p>
-<h2 id="cardinal">Cardinal</h2>
+<h3 id="cardinal">Cardinal</h3>
 <p>Based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, secs. 347, 349–350)</span>.</p>
 <p>In Attic dialect, 13 and 14 are represented by a compound number rather than compound words, thus τρεῖς καὶ δέκα and τέτταρες καὶ δέκα rather than τρεισκαίδεκα and τετταρεσκαίδεκα, respectively.</p>
 <p>εἴκοσι(ν) 20 has a <a href="https://en.wikipedia.org/wiki/Movable_nu">movable nu</a>, which appears as εἴκοσι or εἴκοσιν.</p>
@@ -145,9 +146,32 @@ var app = Elm.Main.init({
 <li>Ascending order with conjunction: <em>thousands</em> καὶ <em>hundreds</em> καὶ <em>tens</em> καὶ <em>ones</em></li>
 <li>Ascending order without conjunction: <em>thousands</em> <em>hundreds</em> <em>tens</em> <em>ones</em></li>
 </ul>
-<h2 id="ordinal">Ordinal</h2>
+<h4 id="common-systems-for-numbers-greater-than-9999">Common systems for numbers greater than 9999</h4>
+<p>In this section, emphasis and quoted translations to Greek texts are mine.</p>
+<p>There are two kinds of numerals to represent numbers greater than 9999. Here I call them <em>n</em>-κισμύριοι system and <em>n</em> μυριάδες system.</p>
+<ul>
+<li><em>n</em>-κισμύριοι system: A compound word of adverbial form and μύριοι (meaning 1,0000)
+<ul>
+<li>τῶν <strong>δισμυρίων</strong> (2,0000 gen.) Polyb.Hist.1.29.7</li>
+<li>εἰς <strong>δισμυρίους ὀκτακισχιλίους</strong> (2,8000 acc.) Polyb.Hist.2.65.5</li>
+<li><strong>μυρίους χιλίους ὀκτακοσίους πεντήκοντα</strong> (1,1850 acc.) Polyb.Hist.3.33.16</li>
+<li>ὑπὲρ τοὺς <strong>ἑξακισχιλίους καὶ μυρίους</strong> (1,6000 acc.) σταδίους. Polyb.Hist.3.39.3</li>
+<li><strong>πεντηκοντακισμυρίους καὶ τετρακισμυρίους</strong> (54,0000 acc.). Polyb.Hist.21.43.19</li>
+</ul></li>
+<li><em>n</em> μυριάδες system: A cardinal number and μυριάδες (meaning 1,0000)
+<ul>
+<li><strong>δύο μυριάδας</strong> (2,0000 acc), Polyb.Hist.2.65.7</li>
+<li><strong>πέντε μυριάδων</strong> (5,0000 gen.) Polyb.Hist.1.18.7</li>
+<li>ὑπὲρ <strong>πεντεκαίδεκα μυριάδας</strong> (15,0000 acc.) Polyb.Hist.1.26.8</li>
+<li>περὶ <strong>τέτταρας καὶ δέκα μυριάδας</strong> (14,0000 acc.) Polyb.Hist.1.26.7</li>
+<li>ἡ πληθὺς πεζῶν μὲν εἰς <strong>εἴκοσι καὶ πέντε</strong> κατελέχθησαν <strong>μυριάδες</strong> (25,0000), ἱππέων δ᾽ ἐπὶ ταῖς <strong>δύο μυριάσιν</strong> ἐπῆσαν ἔτι <strong>τρεῖς χιλιάδες</strong> (2,3000). Polyb.Hist.2.24.14</li>
+</ul></li>
+</ul>
+<p>Both system were even used in the same sentence like πεζῶν μὲν ἔχων εἰς <strong>ἐννέα μυριάδας</strong> (9,0000 acc.), ἱππεῖς δὲ περὶ <strong>μυρίους καὶ δισχιλίους</strong> (1,2000 acc.). Polyb.Hist.3.35.1</p>
+<p>Generally speaking, <em>n</em>-κισμύριοι system is limited for smaller numbers namely <span class="math inline">\(n \le 7\)</span>. A notable exception is Polybius’s πεντηκοντακισμυρίους καὶ τετρακισμυρίους Polyb.Hist.21.43.19, representing 54,0000. On the other hand, <em>n</em> μυριάδες system can be used for bigger numbers. Especially, mathematical documents prefers <em>n</em> μυριάδες system over <em>n</em>-κισμύριοι system.</p>
+<h3 id="ordinal">Ordinal</h3>
 <p>(WIP)</p>
-<h2 id="adverbial">Adverbial</h2>
+<h3 id="adverbial">Adverbial</h3>
 <p>Based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 347)</span>.</p>
 <h2 id="decimal-systems-before-ionian-systems">Decimal Systems before Ionian Systems</h2>
 <h3 id="attic">Attic</h3>
@@ -264,6 +288,28 @@ var app = Elm.Main.init({
 <h1 id="revisions">Revisions</h1>
 <p>All the revisions of this page can be retrieved from GitHub <a href="https://github.com/na4zagin3/na4zagin3.github.io">na4zagin3/na4zagin3.github.io</a>.</p>
 <p>2019-05-06: Entirely rewritten. Fixed Apollonius method to support monad prefix μ<sup>ο</sup>. 2019-05-18: Output in words too.</p>
+<h1 id="abbreviations">Abbreviations</h1>
+<h2 id="general">General</h2>
+<dl>
+<dt>acc.</dt>
+<dd>accusative
+</dd>
+<dt>dat.</dt>
+<dd>dative
+</dd>
+<dt>gen.</dt>
+<dd>genitive
+</dd>
+<dt>nom.</dt>
+<dd>nominative
+</dd>
+</dl>
+<h2 id="texts">Texts</h2>
+<dl>
+<dt>Polyb.Hist.</dt>
+<dd><a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0233">Polybius, <em>Histories</em></a>
+</dd>
+</dl>
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
 <div id="ref-Heath1897">
@@ -271,6 +317,9 @@ var app = Elm.Main.init({
 </div>
 <div id="ref-Hultsch1876">
 <p>Hultsch, Fridericus, ed. 1876. <em>Pappi Alexandrini Collectionis Quae Supersunt</em>. Vol. 1. Berolini: Apud Weidmannos.</p>
+</div>
+<div id="ref-Irigoin1996">
+<p>Irigoin, Jean. 1996. “Les origines de la capitale typographique grecque 1476–1550.” In <em>Greek Letters: From Tablets to Pixels</em>, edited by Michaael S. Macrakis, 69–81. New Castle, Delaware: Ork Knoll Press.</p>
 </div>
 <div id="ref-Smyth1920">
 <p>Smyth, Herbert Weir. 1920. <em>Greek Grammar for Colleges</em>. American Book Company.</p>
