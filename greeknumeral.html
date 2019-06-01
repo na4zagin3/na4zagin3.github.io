@@ -136,8 +136,286 @@ var app = Elm.Main.init({
 <h2 id="numerals">Numerals</h2>
 <p>In every language numbers are represented in sound, therefore this converter firstly spell out the numbers.</p>
 <p>This converter uses Attic dialect, therefore geminated consonant ττ appears instead of σσ in Ionic dialect and Koiné Greek. E.g., τέτταρες instead of τέσσαρες.</p>
+<p>Here are numerals in Attic Greek, based on a table listed in <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 347)</span>.</p>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 43%" />
+<col style="width: 26%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Number</th>
+<th style="text-align: left;">Cardinal</th>
+<th style="text-align: left;">Ordinal</th>
+<th style="text-align: left;">Adverbial</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">εἷς, μία, ἕν <em>one</em></td>
+<td style="text-align: left;">πρῶτος, -η, -ον <em>first</em></td>
+<td style="text-align: left;">ἅπαξ <em>once</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">δύο <em>two</em></td>
+<td style="text-align: left;">δεύτερος <em>second</em></td>
+<td style="text-align: left;">δίς <em>twice</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">τρεῖς, τρία <em>three</em></td>
+<td style="text-align: left;">τρίτος <em>third</em></td>
+<td style="text-align: left;">τρίς <em>trice</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">τέτταρες, τέτταρα</td>
+<td style="text-align: left;">τέταρτος</td>
+<td style="text-align: left;">τετράκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">πέντε</td>
+<td style="text-align: left;">πέμπτος</td>
+<td style="text-align: left;">πεντάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">ἕξ</td>
+<td style="text-align: left;">ἕκτος</td>
+<td style="text-align: left;">ἕξάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">ἑπτά</td>
+<td style="text-align: left;">ἕβδομος</td>
+<td style="text-align: left;">ἑπτάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">ὀκτώ</td>
+<td style="text-align: left;">ὄγδοος</td>
+<td style="text-align: left;">ὀκτάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">ἐννέα</td>
+<td style="text-align: left;">ἔνατος</td>
+<td style="text-align: left;">ἐνάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">δέκα</td>
+<td style="text-align: left;">δέκατος, -η, -ον</td>
+<td style="text-align: left;">δεκάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">ἕνδεκα</td>
+<td style="text-align: left;">ἑνδέκατος</td>
+<td style="text-align: left;">ἑνδεκάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">δώδεκα</td>
+<td style="text-align: left;">δωδέκατος</td>
+<td style="text-align: left;">δωδεκάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">τρεῖς (τρία) καὶ δέκα (or τρεισκαίδεκα)</td>
+<td style="text-align: left;">τρίτος καὶ δέκατος</td>
+<td style="text-align: left;">τρεισκαιδεκάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">τέτταρες (τέτταρα) καὶ δέκα</td>
+<td style="text-align: left;">τέταρτος καὶ δέκατος</td>
+<td style="text-align: left;">τετταρεσκαιδεκάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">πεντεκαίδεκα</td>
+<td style="text-align: left;">πέμπτος καὶ δέκατος</td>
+<td style="text-align: left;">πεντεκαιδεκάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">ἑκκαίδεκα</td>
+<td style="text-align: left;">ἕκτος καὶ δέκατος</td>
+<td style="text-align: left;">ἑκκαιδεκάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">ἑπτακαίδεκα</td>
+<td style="text-align: left;">ἕβδομος καὶ δέκατος</td>
+<td style="text-align: left;">ἑπτακαιδεκάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">ὀκτωκαίδεκα</td>
+<td style="text-align: left;">ὄγδοος καὶ δέκατος</td>
+<td style="text-align: left;">ὀκτωκαιδεκάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">ἐννεακαίδεκα</td>
+<td style="text-align: left;">ἔνατος καὶ δέκατος</td>
+<td style="text-align: left;">ἐννεακαιδεκάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">εἴκοσι(ν)</td>
+<td style="text-align: left;">εἰκοστός, -ή, -όν</td>
+<td style="text-align: left;">εἰκοσάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">21</td>
+<td style="text-align: left;">εἷς καὶ εἴκοσι(ν) or εἴκοσι (καὶ) εἷς</td>
+<td style="text-align: left;">πρῶτος καὶ εἰκοστός</td>
+<td style="text-align: left;">εἰκοσάκις ἅπαξ</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">τριᾱ́κοντα</td>
+<td style="text-align: left;">τριᾱκοστός</td>
+<td style="text-align: left;">τριᾱκοντάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">40</td>
+<td style="text-align: left;">τετταράκοντα</td>
+<td style="text-align: left;">τετταρακοστός</td>
+<td style="text-align: left;">τετταρακοστάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">50</td>
+<td style="text-align: left;">πεντήκοντα</td>
+<td style="text-align: left;">πεντηκοστός</td>
+<td style="text-align: left;">πεντηκοντάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">60</td>
+<td style="text-align: left;">ἑξήκοντα</td>
+<td style="text-align: left;">ἑξηκοστός</td>
+<td style="text-align: left;">ἑξηκοντάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">70</td>
+<td style="text-align: left;">ἑβδομήκοντα</td>
+<td style="text-align: left;">ἑβδομηκοστός</td>
+<td style="text-align: left;">ἑβδομηκοντάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">80</td>
+<td style="text-align: left;">ὀγδοήκοντα</td>
+<td style="text-align: left;">ὀγδοηκοστός</td>
+<td style="text-align: left;">ὀγδοηκοντάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">90</td>
+<td style="text-align: left;">ένενήκοντα</td>
+<td style="text-align: left;">ἐνενηκοστός</td>
+<td style="text-align: left;">ἐνενηκοντάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">100</td>
+<td style="text-align: left;">ἑκατόν</td>
+<td style="text-align: left;">ἑκατοστός, -ή, -όν</td>
+<td style="text-align: left;">ἑκατοντάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">200</td>
+<td style="text-align: left;">διᾱκόσιοι, -αι, -α</td>
+<td style="text-align: left;">διᾱκοσιοστός</td>
+<td style="text-align: left;">διᾱκοσιάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">300</td>
+<td style="text-align: left;">τριᾱκόσιοι</td>
+<td style="text-align: left;">τριᾱκοσιοστός</td>
+<td style="text-align: left;">τριᾱκοσιάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">400</td>
+<td style="text-align: left;">τετρακόσιοι</td>
+<td style="text-align: left;">τετρακοσιοστός</td>
+<td style="text-align: left;">τετρακοσιάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">500</td>
+<td style="text-align: left;">πεντακόσιοι</td>
+<td style="text-align: left;">πεντακοσιοστός</td>
+<td style="text-align: left;">πεντακοσιάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">600</td>
+<td style="text-align: left;">ἑξακόσιοι</td>
+<td style="text-align: left;">ἑξακοσιοστός</td>
+<td style="text-align: left;">ἑξακοσιάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">700</td>
+<td style="text-align: left;">ἑπτακόσιοι</td>
+<td style="text-align: left;">ἑπτακοσιοστός</td>
+<td style="text-align: left;">ἑπτακοσιάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">800</td>
+<td style="text-align: left;">ὀκτακόσιοι</td>
+<td style="text-align: left;">ὀκτακοσιοστός</td>
+<td style="text-align: left;">ὀκτακοσιάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">900</td>
+<td style="text-align: left;">ἐνακόσιοι</td>
+<td style="text-align: left;">ἐνακοσιοστός</td>
+<td style="text-align: left;">ἐνακοσιάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1000</td>
+<td style="text-align: left;">χῑ́λιοι, -αι, -α</td>
+<td style="text-align: left;">χιλῑστός, -ή, -όν</td>
+<td style="text-align: left;">χῑλιάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2000</td>
+<td style="text-align: left;">δισχῑ́λιοι</td>
+<td style="text-align: left;">δισχῑλιοστός</td>
+<td style="text-align: left;">δισχῑλιάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3000</td>
+<td style="text-align: left;">τρισχῑ́λιοι</td>
+<td style="text-align: left;">τρισχῑλιοστός</td>
+<td style="text-align: left;">τρισχῑλιάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1,0000</td>
+<td style="text-align: left;">μῡ́ριοι, -αι, -α</td>
+<td style="text-align: left;">μῡριοστός</td>
+<td style="text-align: left;">μῡριάκις</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2,0000</td>
+<td style="text-align: left;">δισμῡ́ριοι δύο μυριάδες</td>
+<td style="text-align: left;">δισμῡριοστός</td>
+<td style="text-align: left;">δισμῡριάκις</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10,0000</td>
+<td style="text-align: left;">δεκακισμῡ́ριοι</td>
+<td style="text-align: left;">δεκακισμῡριοστός</td>
+<td style="text-align: left;">δεκακισμῡριάκις</td>
+</tr>
+</tbody>
+</table>
 <h3 id="cardinal">Cardinal</h3>
 <p>Based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, secs. 347, 349–350)</span>.</p>
+<p>Single word numeral 5 to 199 are undeclinable <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 350)</span>, i.e., only 1, 2, 3, 4, and -κόσιοι, -χῑ́λιοι, μῡ́ριοι, are declinable as a first–second declension adjective.</p>
 <p>In Attic dialect, 13 and 14 are represented by a compound number rather than compound words, thus τρεῖς καὶ δέκα and τέτταρες καὶ δέκα rather than τρεισκαίδεκα and τετταρεσκαίδεκα, respectively.</p>
 <p>εἴκοσι(ν) 20 has a <a href="https://en.wikipedia.org/wiki/Movable_nu">movable nu</a>, which appears as εἴκοσι or εἴκοσιν.</p>
 <p>Word order are usually one of the following possible orders:</p>
@@ -170,7 +448,11 @@ var app = Elm.Main.init({
 <p>Both system were even used in the same sentence like πεζῶν μὲν ἔχων εἰς <strong>ἐννέα μυριάδας</strong> (9,0000 acc.), ἱππεῖς δὲ περὶ <strong>μυρίους καὶ δισχιλίους</strong> (1,2000 acc.). Polyb.Hist.3.35.1</p>
 <p>Generally speaking, <em>n</em>-κισμύριοι system is limited for smaller numbers namely <span class="math inline">\(n \le 7\)</span>. A notable exception is Polybius’s πεντηκοντακισμυρίους καὶ τετρακισμυρίους Polyb.Hist.21.43.19, representing 54,0000. On the other hand, <em>n</em> μυριάδες system can be used for bigger numbers. Especially, mathematical documents prefers <em>n</em> μυριάδες system over <em>n</em>-κισμύριοι system.</p>
 <h3 id="ordinal">Ordinal</h3>
-<p>(WIP)</p>
+<p>Based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 347)</span>.</p>
+<p><span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 350b)</span> writes</p>
+<blockquote>
+<p>For 21st, 31st, etc., εἷς (for πρῶτος) καὶ εἰκοστός (τριᾱκοστός) is permissible, but otherwise the cardinal is rarely thus joined with the ordinal.</p>
+</blockquote>
 <h3 id="adverbial">Adverbial</h3>
 <p>Based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 347)</span>.</p>
 <h2 id="decimal-systems-before-ionian-systems">Decimal Systems before Ionian Systems</h2>
@@ -179,6 +461,120 @@ var app = Elm.Main.init({
 <h2 id="ionian-decimal-systems-or-ordinary-alphabetic-numerals">Ionian Decimal Systems or Ordinary Alphabetic Numerals</h2>
 <h3 id="common-ionian">Common Ionian</h3>
 <p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:42–44)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Number</th>
+<th>Symbol</th>
+<th>Number</th>
+<th>Symbol</th>
+<th>Number</th>
+<th>Symbol</th>
+<th>Number</th>
+<th>Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>αʹ</td>
+<td>10</td>
+<td>ιʹ</td>
+<td>100</td>
+<td>ρʹ</td>
+<td>1000</td>
+<td>͵αʹ</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>βʹ</td>
+<td>20</td>
+<td>κʹ</td>
+<td>200</td>
+<td>σʹ</td>
+<td>2000</td>
+<td>͵βʹ</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>γʹ</td>
+<td>30</td>
+<td>λʹ</td>
+<td>300</td>
+<td>τʹ</td>
+<td>3000</td>
+<td>͵γʹ</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>δʹ</td>
+<td>40</td>
+<td>μʹ</td>
+<td>400</td>
+<td>υʹ</td>
+<td>4000</td>
+<td>͵δʹ</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>εʹ</td>
+<td>50</td>
+<td>νʹ</td>
+<td>500</td>
+<td>φʹ</td>
+<td>5000</td>
+<td>͵εʹ</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>ϛʹ</td>
+<td>60</td>
+<td>ξʹ</td>
+<td>600</td>
+<td>χʹ</td>
+<td>6000</td>
+<td>͵ϛʹ</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>ζʹ</td>
+<td>70</td>
+<td>οʹ</td>
+<td>700</td>
+<td>ψʹ</td>
+<td>7000</td>
+<td>͵ζʹ</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>ηʹ</td>
+<td>80</td>
+<td>πʹ</td>
+<td>800</td>
+<td>ωʹ</td>
+<td>8000</td>
+<td>͵ηʹ</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>θʹ</td>
+<td>90</td>
+<td>ϟʹ</td>
+<td>900</td>
+<td>ϡʹ</td>
+<td>9000</td>
+<td>͵θʹ</td>
+</tr>
+</tbody>
+</table>
+<p>The symbol order is arbitrary as <span class="citation" data-cites="EmdeBoas2019">(Emde Boas, Rijksbaron, and Bakker 2019, sec. 9.13)</span> says</p>
+<blockquote>
+<p>Complex numbers are formed by combining the letter symbols. Only the rightmost letter (and the leftmost with numbers over 1000) have the stroke:</p>
+<p>τιθʹ = 319 (any ordering was possible: τθιʹ, θτιʹ, etc.)</p>
+<p>͵ατιθʹ = 1319</p>
+</blockquote>
+<p>In my personal experience, descending order is most common.</p>
+<p>Greek started to use <em>zero</em> since Hellenistic times <span class="citation" data-cites="EmdeBoas2019">(Emde Boas, Rijksbaron, and Bakker 2019, sec. 9.13)</span>. The symbol was registered in Unicode as U+1018A 𐆊. See <span class="citation" data-cites="Unicode-L2/04-054">(Mercier 2004)</span> for details.</p>
 <h3 id="diophantus">Diophantus</h3>
 <p>Based on format used Diophantus <em>Arithmetica</em> iv. 18 <span class="citation" data-cites="GMT2">(Thomas 1993, 2:550)</span>, where 26,2143 (κϛ.͵βρμγ) appears as a numerator (Note: contrary to modern mathematics notation, a numerator is located <em>below</em> a denominator).</p>
 <blockquote>
@@ -285,9 +681,13 @@ var app = Elm.Main.init({
 <ul>
 <li>0<sup>p</sup>47′8″: Ο <span><span style="text-decoration: overline; line-height: 2em;">μζ</span></span> <span><span style="text-decoration: overline; line-height: 2em;">η</span></span> <span class="citation" data-cites="GMT2">(Thomas 1993, 2:430)</span></li>
 </ul>
+<p>Unicode proposal L2/04-054 <span class="citation" data-cites="Unicode-L2/04-054">(Mercier 2004)</span> has detailed description about <em>zero</em>.</p>
 <h1 id="revisions">Revisions</h1>
 <p>All the revisions of this page can be retrieved from GitHub <a href="https://github.com/na4zagin3/na4zagin3.github.io">na4zagin3/na4zagin3.github.io</a>.</p>
-<p>2019-05-06: Entirely rewritten. Fixed Apollonius method to support monad prefix μ<sup>ο</sup>. 2019-05-18: Output in words too.</p>
+<ul>
+<li>2019-05-06: Entirely rewritten. Fixed Apollonius method to support monad prefix μ<sup>ο</sup>.</li>
+<li>2019-05-18: Output in words too.</li>
+</ul>
 <h1 id="abbreviations">Abbreviations</h1>
 <h2 id="general">General</h2>
 <dl>
@@ -312,14 +712,20 @@ var app = Elm.Main.init({
 </dl>
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
+<div id="ref-EmdeBoas2019">
+<p>Emde Boas, Evert van, Huitink Rijksbaron Albert, and Mathieu de Bakker. 2019. <em>Cambridge Grammar of Classical Greek</em>. Cambridge; New York: Cambridge University Press.</p>
+</div>
 <div id="ref-Heath1897">
 <p>Heath, Sir, Thomas Little, ed. 1897. <em>The Works of Archimedes</em>. London, England: Cambridge University Press.</p>
 </div>
 <div id="ref-Hultsch1876">
-<p>Hultsch, Fridericus, ed. 1876. <em>Pappi Alexandrini Collectionis Quae Supersunt</em>. Vol. 1. Berolini: Apud Weidmannos.</p>
+<p>Hultsch, Fridericus, ed. 1876. <em>Pappi Alexandrini collectionis quae supersunt</em>. Vol. 1. Berolini: Apud Weidmannos.</p>
 </div>
 <div id="ref-Irigoin1996">
 <p>Irigoin, Jean. 1996. “Les origines de la capitale typographique grecque 1476–1550.” In <em>Greek Letters: From Tablets to Pixels</em>, edited by Michaael S. Macrakis, 69–81. New Castle, Delaware: Ork Knoll Press.</p>
+</div>
+<div id="ref-Unicode-L2/04-054">
+<p>Mercier, Raymond. 2004. “Proposal to Encode Greek Zero in the UCS.” L2/04-054. Unicode. <a href="https://www.unicode.org/L2/L2004/04054r-greek-zero.pdf">https://www.unicode.org/L2/L2004/04054r-greek-zero.pdf</a>.</p>
 </div>
 <div id="ref-Smyth1920">
 <p>Smyth, Herbert Weir. 1920. <em>Greek Grammar for Colleges</em>. American Book Company.</p>
