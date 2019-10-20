@@ -151,3 +151,7 @@ div.cgra-board tr, td, th {
 pre.sourceCode {
 	overflow-y: scroll;
 }
+
+.overlined {
+    text-decoration: overline;
+}

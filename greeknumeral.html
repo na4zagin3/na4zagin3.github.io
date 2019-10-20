@@ -5,9 +5,9 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="SAKAMOTO Noriaki (@na4zagin3)" />
-  <meta name="dcterms.date" content="2019-05-30" />
+  <meta name="dcterms.date" content="2019-10-21" />
   <title>Comprehensive Greek Number Converter</title>
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -23,9 +23,9 @@
 <header id="title-block-header">
 <h1 class="title">Comprehensive Greek Number Converter</h1>
 <p class="author">SAKAMOTO Noriaki (@na4zagin3)</p>
-<p class="date">2019-05-30</p>
+<p class="date">2019-10-21</p>
 </header>
-<nav id="TOC">
+<nav id="TOC" role="doc-toc">
 <ul>
 <li><a href="#converter">Converter</a></li>
 <li><a href="#notations">Notations</a></li>
@@ -33,7 +33,7 @@
 <li><a href="#numerals">Numerals</a></li>
 <li><a href="#decimal-systems-before-ionian-systems">Decimal Systems before Ionian Systems</a></li>
 <li><a href="#ionian-decimal-systems-or-ordinary-alphabetic-numerals">Ionian Decimal Systems or Ordinary Alphabetic Numerals</a></li>
-<li><a href="#fractions-tbu">Fractions (TBU)</a></li>
+<li><a href="#fractions">Fractions</a></li>
 <li><a href="#sexagesimal-systems">Sexagesimal Systems</a></li>
 </ul></li>
 <li><a href="#revisions">Revisions</a></li>
@@ -129,14 +129,14 @@ var app = Elm.Main.init({
 });
 </script>
 <p>Inspired from Russell Cottrell’s <a href="http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm">Greek Number Converter</a>.</p>
+<p>This document is to provide reliable information and interactive converters of Ancient Greek number systems with proper citations. Currently, it is difficult to find correct information about Ancient Greek number systems in the Internet. For example, Harry Foundalis’ <a href="https://www.foundalis.com/lan/grknum.htm"><em>Greek Numbers and Numerals (Ancient and Modern)</em></a> contains comprehensive description about Modern Greek, but the section about Ancient Greek contains several problems—he insists that Archimedes (287–212 BCE) came up with numerals greater than 1,0000, while Herodotus (484–425 BCE) and others before Archimedes, in fact, casually used δισμύριοι 2,0000 and so on: “ἄνδρες τετρακισχίλιοι καὶ δισμύριοι γίνονται.”—Herodotus <em>Historia</em> 7.185.1. John J O’Connor and Edmund F Robertson’s <a href="http://www-history.mcs.st-and.ac.uk/HistTopics/Greek_numbers.html"><em>Greek Number Systems</em></a> clearly shows they could not read Ancient or Modern Greek or could not consult people having studied Classics in their university. Russell Cottrell’s The Greek Number Converter is confusing people—an author of Wikipedia.ja’s article ギリシアの数字 “Greek Numerals” misunderstood as the method he invented was actually used by Ancient Greeks.</p>
 <h1 id="notations">Notations</h1>
-<p>In this document, I use myriad separators (e.g., 1234,5678,9012) rather than thousand separators (e.g., 123,456,789,012). For sexagesimal notations, I write 12°34′56″7‴8⁗ for degrees (360 degrees = 1 turn), 12<sup>p</sup>34′56″7‴8⁗ for segments (120 segments = 1 diameter; “p” stands for <em>partes</em> “parts”), and modern notation like 1,2;3,4 for general sexagesimal fractions. In modern sexagesimal notation, “,” is a sexagesimal separator and “;” is followed by a fraction part. Therefore <span class="math inline">\(\text{1,2;3,4} = 1 \times 60 + 2 + \frac{3}{60} + \frac{4}{60^2}\)</span>.</p>
-<p>Throughout the document Greek texts smallcase and uppercase letters are distinguished (e.g., μ vs. Μ) for readability and to follow modern printing conventions. That distinction <em>did not exist</em> in Ancient Greek; minuscule script was invented in 9th century <span class="citation" data-cites="Irigoin1996">(Irigoin 1996, 69)</span>.</p>
+<p>In this document, I use myriad (meaning <em>ten-thousand</em>) separators (e.g., 1234,5678,9012) rather than thousand separators (e.g., 123,456,789,012). That is because Ancient Greek numerals are, like Chinese and Japanese, based on ten thousand—therefore 20,0000 or 200,000 is expressed as <em>twenty ten-thousand</em> (εἴκωσι μυριάδες) rather than <em>two hundred thousand</em> (διακόσιοι χίλιοι). Ancient Greeks also used sexagesimal systems, or base-60 system, by influence of Mesopotamian mathematics. For sexagesimal notations, I write 12°34′56″7‴8⁗ for degrees (360 degrees = 1 turn), 12<sup>p</sup>34′56″7‴8⁗ for segments (120 segments = 1 diameter; “p” stands for <em>partes</em> “parts”), and modern notation like 1,2;3,4 for general sexagesimal fractions. In modern sexagesimal notation, “,” is a sexagesimal separator and “;” is followed by a fraction part. Therefore <span class="math inline">\(\text{1,2;3,4} = 1 \times 60 + 2 + \frac{3}{60} + \frac{4}{60^2}\)</span>.</p>
+<p>Throughout the document Greek texts lowercase and uppercase letters are distinguished (e.g., μ vs. Μ) for readability and to follow modern printing conventions. That distinction <em>did not exist</em> in Ancient Greek; minuscule script was invented in 9th century <span class="citation" data-cites="Irigoin1996">(Irigoin 1996, 69)</span>.</p>
 <h1 id="systems">Systems</h1>
 <h2 id="numerals">Numerals</h2>
-<p>In every language numbers are represented in sound, therefore this converter firstly spell out the numbers.</p>
-<p>This converter uses Attic dialect, therefore geminated consonant ττ appears instead of σσ in Ionic dialect and Koiné Greek. E.g., τέτταρες instead of τέσσαρες.</p>
-<p>Here are numerals in Attic Greek, based on a table listed in <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 347)</span>.</p>
+<p>In every language numerals has existed before invention of writings, including alphabets and numbers. Therefore I firstly introduce numerals. For simplicity, I only refer Attic dialect, which was one of the major dialects of Ancient Greek and had been considered the norm of written language until Modern Greek took in place. Please see cited books if you are interested in other dialects. Therefore the geminated consonant “ττ” appears instead of “σσ” in Ionic dialect and Koiné Greek. E.g., τέτταρες instead of τέσσαρες.</p>
+<p>The below Attic Greek numerals are based on a table listed in <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 347)</span>. Cardinal numbers are <em>one,</em> <em>two,</em> <em>three</em> and so on; ordinal numbers are <em>first,</em> <em>second,</em> <em>third</em> and so on; and adverbial numbers are <em>once,</em> <em>twice,</em> <em>thrice</em> and so on. Since Greek has declension—an adjective changes their form depending on gender, number, and case—two or three forms in nominative case may be shown in each cardinal number or ordinal number field.</p>
 <table>
 <colgroup>
 <col style="width: 9%" />
@@ -414,19 +414,19 @@ var app = Elm.Main.init({
 </tbody>
 </table>
 <h3 id="cardinal">Cardinal</h3>
-<p>Based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, secs. 347, 349–350)</span>.</p>
-<p>Single word numeral 5 to 199 are undeclinable <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 350)</span>, i.e., only 1, 2, 3, 4, and -κόσιοι, -χῑ́λιοι, μῡ́ριοι, are declinable as a first–second declension adjective.</p>
-<p>In Attic dialect, 13 and 14 are represented by a compound number rather than compound words, thus τρεῖς καὶ δέκα and τέτταρες καὶ δέκα rather than τρεισκαίδεκα and τετταρεσκαίδεκα, respectively.</p>
+<p>This section is based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, secs. 347, 349–50)</span>.</p>
+<p>Only numerals 1, 2, 3, 4, and numerals ending with -κόσιοι, -χῑ́λιοι, and μῡ́ριοι, are declinable as a first–second declension adjective. In other words, single word numerals 5 to 199 are undeclinable <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 350)</span>.</p>
+<p>In Attic dialect, 13 and 14 are represented by compound numbers rather than compound words; thus τρεῖς καὶ δέκα “three and ten” and τέτταρες καὶ δέκα “four and ten” rather than τρεισκαίδεκα “three-and-ten” and τετταρεσκαίδεκα “four-and-ten”, respectively.</p>
 <p>εἴκοσι(ν) 20 has a <a href="https://en.wikipedia.org/wiki/Movable_nu">movable nu</a>, which appears as εἴκοσι or εἴκοσιν.</p>
-<p>Word order are usually one of the following possible orders:</p>
+<p>Word order usually appears in one of the following three formats:</p>
 <ul>
-<li>Descending order with conjunction: <em>ones</em> καὶ <em>tens</em> καὶ <em>hundreds</em> καὶ <em>thousands</em></li>
-<li>Ascending order with conjunction: <em>thousands</em> καὶ <em>hundreds</em> καὶ <em>tens</em> καὶ <em>ones</em></li>
-<li>Ascending order without conjunction: <em>thousands</em> <em>hundreds</em> <em>tens</em> <em>ones</em></li>
+<li>Ascending order with conjunction: <em>ones</em> καὶ <em>tens</em> καὶ <em>hundreds</em> καὶ <em>thousands</em></li>
+<li>Descending order with conjunction: <em>thousands</em> καὶ <em>hundreds</em> καὶ <em>tens</em> καὶ <em>ones</em></li>
+<li>Descending order without conjunction: <em>thousands</em> <em>hundreds</em> <em>tens</em> <em>ones</em></li>
 </ul>
 <h4 id="common-systems-for-numbers-greater-than-9999">Common systems for numbers greater than 9999</h4>
-<p>In this section, emphasis and quoted translations to Greek texts are mine.</p>
-<p>There are two kinds of numerals to represent numbers greater than 9999. Here I call them <em>n</em>-κισμύριοι system and <em>n</em> μυριάδες system.</p>
+<p>In this section, all emphases and quoted translations to Greek texts are mine.</p>
+<p>There are two kinds of numerals to represent numbers greater than 9999. Here I call them <em>n</em>-κισμύριοι “<em>n</em>-times-ten-thousand” system and <em>n</em> μυριάδες “<em>n</em> ten-thousands” system.</p>
 <ul>
 <li><em>n</em>-κισμύριοι system: A compound word of adverbial form and μύριοι (meaning 1,0000)
 <ul>
@@ -445,22 +445,27 @@ var app = Elm.Main.init({
 <li>ἡ πληθὺς πεζῶν μὲν εἰς <strong>εἴκοσι καὶ πέντε</strong> κατελέχθησαν <strong>μυριάδες</strong> (25,0000), ἱππέων δ᾽ ἐπὶ ταῖς <strong>δύο μυριάσιν</strong> ἐπῆσαν ἔτι <strong>τρεῖς χιλιάδες</strong> (2,3000). Polyb.Hist.2.24.14</li>
 </ul></li>
 </ul>
-<p>Both system were even used in the same sentence like πεζῶν μὲν ἔχων εἰς <strong>ἐννέα μυριάδας</strong> (9,0000 acc.), ἱππεῖς δὲ περὶ <strong>μυρίους καὶ δισχιλίους</strong> (1,2000 acc.). Polyb.Hist.3.35.1</p>
-<p>Generally speaking, <em>n</em>-κισμύριοι system is limited for smaller numbers namely <span class="math inline">\(n \le 7\)</span>. A notable exception is Polybius’s πεντηκοντακισμυρίους καὶ τετρακισμυρίους Polyb.Hist.21.43.19, representing 54,0000. On the other hand, <em>n</em> μυριάδες system can be used for bigger numbers. Especially, mathematical documents prefers <em>n</em> μυριάδες system over <em>n</em>-κισμύριοι system.</p>
+<p>Both system were even used in the same sentence. For example, πεζῶν μὲν ἔχων εἰς <strong>ἐννέα μυριάδας</strong> (9,0000 acc.), ἱππεῖς δὲ περὶ <strong>μυρίους καὶ δισχιλίους</strong> (1,2000 acc.). Polyb.Hist.3.35.1</p>
+<p>Generally speaking, <em>n</em>-κισμύριοι system is limited for smaller numbers namely <span class="math inline">\(n \le 7\)</span>. A notable exception is Polybius’s πεντηκοντακισμυρίους καὶ τετρακισμυρίους Polyb.Hist.21.43.19, representing 54,0000. On the other hand, <em>n</em> μυριάδες system can be used for bigger numbers. Especially, mathematical documents prefer <em>n</em> μυριάδες system over <em>n</em>-κισμύριοι system.</p>
 <h3 id="ordinal">Ordinal</h3>
-<p>Based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 347)</span>.</p>
+<p>This section is based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 347)</span>.</p>
 <p><span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 350b)</span> writes</p>
 <blockquote>
 <p>For 21st, 31st, etc., εἷς (for πρῶτος) καὶ εἰκοστός (τριᾱκοστός) is permissible, but otherwise the cardinal is rarely thus joined with the ordinal.</p>
 </blockquote>
+<p>Unlike cardinal numbers, every ordinal number is delinable.</p>
 <h3 id="adverbial">Adverbial</h3>
-<p>Based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 347)</span>.</p>
+<p>This section is based on <span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 347)</span>.</p>
+<p>(TBU)</p>
 <h2 id="decimal-systems-before-ionian-systems">Decimal Systems before Ionian Systems</h2>
+<h3 id="linear-b-tbu">Linear B (TBU)</h3>
 <h3 id="attic">Attic</h3>
-<p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:41–42)</span>.</p>
+<p>Attic number system is the oldest number system after Linear B numbers. It is a decimal system like Egyptian Hieroglyphic numerals. Similarly to Roman numerals, Attic numerals have symbols for 1 Ι, 5 Π, 10 Δ, 50 𐅄, 100 Η, 500 𐅅, 1000 Χ, 5000 𐅆, 1,0000 Μ, and 5,0000 𐅇—they are simply lined up, as 153 Η𐅄ΙΙΙ and 44 ΔΔΔΔΙΙΙΙ <span class="citation" data-cites="GMT1">(Thomas 1991, 1:41–42)</span>.</p>
 <h2 id="ionian-decimal-systems-or-ordinary-alphabetic-numerals">Ionian Decimal Systems or Ordinary Alphabetic Numerals</h2>
 <h3 id="common-ionian">Common Ionian</h3>
-<p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:42–44)</span>.</p>
+<p>This section describes the common number system used since Classic period (5c. BCE) to modern age.</p>
+<p>Ionian notation is decimal system where different letters are assigned for every digit. For example, 111 <span class="math inline">\((= 100 + 10 + 1)\)</span> is expressed by <span class="overlined">ρια</span> which consists of <span class="overlined">ρ</span> denoting 100, <span class="overlined">ι</span> 10, and <span class="overlined">α</span> 1.</p>
+<p>Here are symbols representing 1 to 9000, based on <span class="citation" data-cites="Heath1931">(Heath 1931, 18)</span>.</p>
 <table>
 <thead>
 <tr class="header">
@@ -477,106 +482,112 @@ var app = Elm.Main.init({
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>αʹ</td>
+<td><span class="overlined">α</span></td>
 <td>10</td>
-<td>ιʹ</td>
+<td><span class="overlined">ι</span></td>
 <td>100</td>
-<td>ρʹ</td>
+<td><span class="overlined">ρ</span></td>
 <td>1000</td>
-<td>͵αʹ</td>
+<td><span class="overlined">͵α</span></td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>βʹ</td>
+<td><span class="overlined">β</span></td>
 <td>20</td>
-<td>κʹ</td>
+<td><span class="overlined">κ</span></td>
 <td>200</td>
-<td>σʹ</td>
+<td><span class="overlined">σ</span></td>
 <td>2000</td>
-<td>͵βʹ</td>
+<td><span class="overlined">͵β</span></td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>γʹ</td>
+<td><span class="overlined">γ</span></td>
 <td>30</td>
-<td>λʹ</td>
+<td><span class="overlined">λ</span></td>
 <td>300</td>
-<td>τʹ</td>
+<td><span class="overlined">τ</span></td>
 <td>3000</td>
-<td>͵γʹ</td>
+<td><span class="overlined">͵γ</span></td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>δʹ</td>
+<td><span class="overlined">δ</span></td>
 <td>40</td>
-<td>μʹ</td>
+<td><span class="overlined">μ</span></td>
 <td>400</td>
-<td>υʹ</td>
+<td><span class="overlined">υ</span></td>
 <td>4000</td>
-<td>͵δʹ</td>
+<td><span class="overlined">͵δ</span></td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td>εʹ</td>
+<td><span class="overlined">ε</span></td>
 <td>50</td>
-<td>νʹ</td>
+<td><span class="overlined">ν</span></td>
 <td>500</td>
-<td>φʹ</td>
+<td><span class="overlined">φ</span></td>
 <td>5000</td>
-<td>͵εʹ</td>
+<td><span class="overlined">͵ε</span></td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td>ϛʹ</td>
+<td><span class="overlined">ϛ</span></td>
 <td>60</td>
-<td>ξʹ</td>
+<td><span class="overlined">ξ</span></td>
 <td>600</td>
-<td>χʹ</td>
+<td><span class="overlined">χ</span></td>
 <td>6000</td>
-<td>͵ϛʹ</td>
+<td><span class="overlined">͵ϛ</span></td>
 </tr>
 <tr class="odd">
 <td>7</td>
-<td>ζʹ</td>
+<td><span class="overlined">ζ</span></td>
 <td>70</td>
-<td>οʹ</td>
+<td><span class="overlined">ο</span></td>
 <td>700</td>
-<td>ψʹ</td>
+<td><span class="overlined">ψ</span></td>
 <td>7000</td>
-<td>͵ζʹ</td>
+<td><span class="overlined">͵ζ</span></td>
 </tr>
 <tr class="even">
 <td>8</td>
-<td>ηʹ</td>
+<td><span class="overlined">η</span></td>
 <td>80</td>
-<td>πʹ</td>
+<td><span class="overlined">π</span></td>
 <td>800</td>
-<td>ωʹ</td>
+<td><span class="overlined">ω</span></td>
 <td>8000</td>
-<td>͵ηʹ</td>
+<td><span class="overlined">͵η</span></td>
 </tr>
 <tr class="odd">
 <td>9</td>
-<td>θʹ</td>
+<td><span class="overlined">θ</span></td>
 <td>90</td>
-<td>ϟʹ</td>
+<td><span class="overlined">ϟ</span></td>
 <td>900</td>
-<td>ϡʹ</td>
+<td><span class="overlined">ϡ</span></td>
 <td>9000</td>
-<td>͵θʹ</td>
+<td><span class="overlined">͵θ</span></td>
 </tr>
 </tbody>
 </table>
-<p>The symbol order is arbitrary as <span class="citation" data-cites="EmdeBoas2019">(Emde Boas, Rijksbaron, and Bakker 2019, sec. 9.13)</span> says</p>
+<p>There were a few way to distinguish numbers from ordinal texts. Usual way used in manuscripts is drawing overline over a number (e.g., <span class="overlined">κε</span> 25). In Modern Greek, symbol “ʹ” κεραία (U+0374 GREEK NUMERAL SIGN) is attached to the right top (e.g., κεʹ 25).</p>
+<p><span class="citation" data-cites="Heath1931">(Heath 1931, 17–18)</span> explains:</p>
+<blockquote>
+<p>To distinguish letters denoting numbers from the letters forming words in any passage various devices were used. The numeral might be put between dots, ⁝ or :, or space might be left on each side. In Imperial times it became usual to put a horizontal stroke over the numeral, e.g. ἡ βουλὺ τῶν Χ̄, variations being ⸱Χ⸱ and Χ̆ the like. In cursive writing the stroke over the letter became the orthodox mark for the numeral or the collection of numeral signs.</p>
+</blockquote>
+<p><span class="citation" data-cites="EmdeBoas2019">(Emde Boas, Rijksbaron, and Bakker 2019, sec. 9.13)</span> insists the symbol order is arbitrary:</p>
 <blockquote>
 <p>Complex numbers are formed by combining the letter symbols. Only the rightmost letter (and the leftmost with numbers over 1000) have the stroke:</p>
 <p>τιθʹ = 319 (any ordering was possible: τθιʹ, θτιʹ, etc.)</p>
 <p>͵ατιθʹ = 1319</p>
 </blockquote>
-<p>In my personal experience, descending order is most common.</p>
+<p>although I have never seen any ordering other than the descending order.</p>
 <p>Greek started to use <em>zero</em> since Hellenistic times <span class="citation" data-cites="EmdeBoas2019">(Emde Boas, Rijksbaron, and Bakker 2019, sec. 9.13)</span>. The symbol was registered in Unicode as U+1018A 𐆊. See <span class="citation" data-cites="Unicode-L2/04-054">(Mercier 2004)</span> for details.</p>
+<p>For numbers 1,0000 and followings, Ancient Greeks stack number symbols on “Μ” stands for μύριοι “ten-thousand.” For example, <span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">͵ζροε</span></span><span class="overlined">͵εωοε</span> meaning 7175,5875.</p>
 <h3 id="diophantus">Diophantus</h3>
-<p>Based on format used Diophantus <em>Arithmetica</em> iv. 18 <span class="citation" data-cites="GMT2">(Thomas 1993, 2:550)</span>, where 26,2143 (κϛ.͵βρμγ) appears as a numerator (Note: contrary to modern mathematics notation, a numerator is located <em>below</em> a denominator).</p>
+<p>For numbers 1,0000 and followings, Diophantus put a dot instead of using stacked number with “Μ”, as used in <em>Arithmetica</em> iv. 18 <span class="citation" data-cites="GMT2">(Thomas 1993, 2:550)</span>, where 26,2143 (κϛ.͵βρμγ) appears as a numerator (Note: contrary to modern mathematics notation, a numerator is located <em>below</em> a denominator).</p>
 <blockquote>
 <p>Ἐπὶ τὰς ὑποστάσεις· ἔσται ὁ α<sup>ος</sup> ἑνὸς ιϛ<sup>ον</sup>, ὁ δὲ β<sup>ος</sup> <span style="display: inline-flex; flex-direction: column; vertical-align: middle;"><span style="text-align: center; line-height: 1em;">͵δϟϛ</span><span style="text-align: center; line-height: 1em;">κϛ. ͵βρμγ</span></span>.</p>
 </blockquote>
@@ -588,15 +599,15 @@ var app = Elm.Main.init({
 <blockquote>
 <p>Another method is to use the sign Μ or <span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span> for the myriad and to put the number of myriads after it, separated by a dot from the thousands.</p>
 <p>Thus</p>
-<p><span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span><span><span style="text-decoration: overline; line-height: 2em;">ρδ</span><span>.<wbr></span><span style="text-decoration: overline; line-height: 2em;">͵ηφοϛ</span></span> (Diophantus vi. 22, ed. Tannery 446. 11).</p>
+<p><span style="display: inline-flex; flex-direction: column-reverse;"><span style="text-align: center; line-height: 1em;">Μ</span><span style="text-align: center; line-height: 1em; font-size: smaller;">Υ</span></span><span><span style="text-decoration: overline; line-height: 2em;">ρδ</span><span>.<wbr></span><span style="text-decoration: overline; line-height: 2em;">͵ηφοϛ</span></span> (Diophantus vi. 22, ed. Tannery 446. 11).</p>
 </blockquote>
 <p>This converter extends the system for numbers greater than 9999,9999, interpreting the system “putting a dot between every myriads.”</p>
 <h3 id="heron">Heron</h3>
-<p><span class="citation" data-cites="GMT1">(Thomas 1991, 1:44)</span> says</p>
+<p>Some other writers including Heron used another system for myriads—they wrote two dots “¨” to multiply a number symbol by ten thousand. <span class="citation" data-cites="GMT1">(Thomas 1991, 1:44)</span> says</p>
 <blockquote>
 <p>In a third method the symbol M is not used, but the symbol representing the number of myriads has two dots placed over it.</p>
 <p>Thus</p>
-<p>α̈. <span style="text-decoration: overline;">͵ηχϟϛ</span> = 18596 (Heron, <em>Geometrica</em> xvii. 33, ed. Heiberg 348. 35).</p>
+<p>α̈. <span style="text-decoration: overline;">͵ηχϟϛ</span> = 18596 (Heron, <em>Geometrica</em> xvii. 33, ed. Heiberg 348. 35).</p>
 <p>Heron commenly wrote the word μυριάδες in full.</p>
 </blockquote>
 <p>and <span class="citation" data-cites="Heath1897">(Heath 1897, lxix)</span> says</p>
@@ -607,9 +618,53 @@ var app = Elm.Main.init({
 <p>Based on <a href="http://www-history.mcs.st-andrews.ac.uk/HistTopics/Greek_numbers.html">Greek number systems</a>, which is apparently written by those who do not know Greek language, hence not reliable. I’m now finding more reliable sources.</p>
 <p>This converter extends the system for numbers greater than 9999,9999, interpreting the system “putting Μ between every myriads.”</p>
 <h3 id="apollonius">Apollonius</h3>
-<p>Based on <span class="citation" data-cites="Hultsch1876">(Hultsch 1876, 1:2–29)</span>.</p>
+<p>Apollonius invented his own way to denote bigger numbers based on myriad <span class="citation" data-cites="Hultsch1876">(Hultsch 1876, 1:2–29)</span>.</p>
+<p>Optionally a number 1 to 9999 may be referred as a multiple of “μ<sup>ο</sup>” meaning μονάς “unit,” then a multiple of ten thousand (1,0000) is expressed as a multiple of “μ<sup>α</sup>” meaning μυριάδες ἁπλαῖ “single myriads.” Similarly squared ten thousand (1,0000,0000) is represented by “μ<sup>β</sup>” meaning μυριάδες διπλαῖ “double myriads,” cubed ten thousand (1,0000,0000,0000) by “μ<sup>γ</sup>” meaning μυριάδες τριπλαῖ “triple myriad,” and so on. For example, 12,0045,6789 would be written as μ<sup>β</sup> [ιβ][.overlined] καὶ μα [με][.overlined] καὶ μ<sup>ο</sup> [͵ϛψπθ][.overlined] “12 double myriads and 45 single myriads and 6789 units.”</p>
+<table>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Word</th>
+<th>Number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>μ<sup>ο</sup></td>
+<td>μονάς</td>
+<td><span class="math inline">\(10^0 = 1\)</span></td>
+</tr>
+<tr class="even">
+<td>μ<sup>α</sup></td>
+<td>μυριάδες ἁπλαῖ</td>
+<td><span class="math inline">\(10^{1⨯4} = 1,0000\)</span></td>
+</tr>
+<tr class="odd">
+<td>μ<sup>β</sup></td>
+<td>μυριάδες διπλαῖ</td>
+<td><span class="math inline">\(10^{2⨯4} = 1,0000,0000\)</span></td>
+</tr>
+<tr class="even">
+<td>μ<sup>γ</sup></td>
+<td>μυριάδες τριπλαῖ</td>
+<td><span class="math inline">\(10^{3⨯4} = 1,0000,0000,0000\)</span></td>
+</tr>
+<tr class="odd">
+<td>μ<sup>(<em>n</em>)</sup></td>
+<td>μυριάδες <em>n</em>-πλαῖ</td>
+<td><span class="math inline">\(10^{4n}\)</span></td>
+</tr>
+<tr class="even">
+<td>μ<sup>β</sup> ιβ</td>
+<td>δώδεκα μυριάδες τριπλαῖ</td>
+<td><span class="math inline">\(12⨯10^{3⨯4} = 12,0000,0000,0000\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>His system is similar to 萬進法 “base-ten-thousand system” used in East Asia, comparing to Archimedes’s one similar to 萬萬進法 “base-hundred-million system.”</p>
+<p>Due to limitation of printing technology, (Hultsch 1876) typeset an exponent as a superscript as μ<sup>ο</sup>, while two manuscripts, Vat. gr. 218 and Par. gr. 2440, wrote the exponent above μ. In this converter I adopt stacking rather than superscripts.</p>
 <h4 id="modified-apollonius">Modified Apollonius</h4>
-<p>I slightly modified the system to distinguish μ<sup>ο</sup> “μονάδες” vs. Μ<sup>α</sup> “μυριάδες ἁπλαῖ”, Μ<sup>β</sup> “μυριάδες διπλαῖ”, and so on.</p>
+<p>In Apollonius notation, μ<sup>ο</sup> could represents both μονάδες “units” and μυριάδες ἑβδομηκονταπλαῖ “60-fold myriads.” To distinguish them I introduced case distinction—lowercase μ for μ<sup>ο</sup> “μονάδες” and uppercase Μ for Μ<sup>α</sup> “μυριάδες ἁπλαῖ”, Μ<sup>β</sup> “μυριάδες διπλαῖ”, and so on.</p>
 <h4 id="russell-cottrells-notation">Russell Cottrell’s Notation</h4>
 <p><strong>This notation is not used by Ancient Greeks. As of now, there is no method to spell out numbers written in this notation.</strong></p>
 <p>This is based on a idea proposed by Russell Cottrell. Although his description is contradicting to his converter’s outputs, he gave some examples in his Greek Number Converter <a href="http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm">Greek Number Converter</a>:</p>
@@ -661,11 +716,60 @@ var app = Elm.Main.init({
 <li>αΜγΜδʹ,αΜβʹʹ,εʹʹΜϛʹ,ζʹΜη,θʹ <span class="math inline">\(= 10000^{10000^{10000^1 \times 3} \times 4 + 10000^{10000^1 \times 2+5} \times 6 + 7} \times 8 + 9\)</span></li>
 </ul>
 <h3 id="archimedes">Archimedes</h3>
-<p>TBU. He invented myriad-myriad based numerals in <em>The Sand Reckoner.</em></p>
-<h2 id="fractions-tbu">Fractions (TBU)</h2>
+<p>Archimedes invented myriad-myriad based numerals in <em>The Sand Reckoner</em> <span class="citation" data-cites="Heath1897">(Heath 1897, 227–29)</span>. He introduced a numeral αἱ <em>l</em>-στᾶς περιόδου <em>m</em>-στῶν ἀριθμῶν <em>n</em>, meaning “number <em>n</em> of the <em>m</em>-th order of the <em>l</em>-th period,” expressing <span class="math inline">\(n × d(l − 1)d + m − 1\)</span>, where <span class="math inline">\(d = 1,0000,0000\)</span>. In his system, the biggest number is αἱ μυριακισμυριοστᾶς περιόδου μυριακισμυριοστῶν ἀριθμῶν μυρίαι μυριάδες a myriad-myriad units of the myriad-myriad-th order of the myriad-myriad-th period, which is <span class="math inline">\(10^{8 × 10^{16}}\)</span>.</p>
+<h2 id="fractions">Fractions</h2>
+<h3 id="words-representing-fractions">Words representing fractions</h3>
+<!--
+Basically there are three systems of fractions used by Ancient Greeks. Unit fraction series, juxtaposition, and stacking.
+Firstly, unit fraction is denoted by a denominator symbol “″” for example δ″ ¼ and ιε″ 1/15. They had special symbol for some special fractions like S ½.
+Similar to Egyptians, Ancient Greeks also preferred to denote a fraction as a sum of unit fractions. For example, ¾ was written S″δ″ = ½ + ¼. 
+For non-unit fractions can be expressed as a pair of a numerator and a denominator. They may be juxtaposed like θ′ια″ 9/11. Heron repeated a denominator twice like θ′ια″ια″.  Diophantus also spelled out word ἐν μορίῳ “in a part of” or μορίου “part of” as in τϛ.͵θ μορ. λγ.͵αψοϛ “306,9000/33,1776.”
+Diophantos also vertically stacked a numerator and a denominator like modern notation, except for their positions are swapped.   Like = 5/3 and  = 127,0568/1,0816.
+-->
+<p><span class="citation" data-cites="Smyth1920">(Smyth 1920, sec. 357)</span> exemplifies several methods:</p>
+<ul>
+<li><p><span class="math inline">\(\frac{1}{2}\)</span>: ἥμισυς, ἥμισυς + gen, or a compound word</p>
+<blockquote>
+<p>ἥμισυς <span class="math inline">\(\frac{1}{2}\)</span>, ὁ ἥμισυς τοῦ ἀριθμοῦ <em>half the number,</em> αἱ ἡμίσειαι τῶν νεῶν <em>half of the ships,</em> τὸ ἥμισυ τοῦ στρατοῦ <em>half the army,</em> ἡμιτάλαντον <em>half a talent;</em></p>
+</blockquote></li>
+<li><p>Half-integers (<span class="math inline">\(\frac{n}{2}\)</span>): <span class="math inline">\(n\)</span> ἥμισυς</p>
+<blockquote>
+<p>τρία ἡμιτάλαντα <span class="math inline">\(1\frac{1}{2}\)</span> <em>talents,</em> τρίτον ἡμίμναιον <span class="math inline">\(2\frac{1}{2}\)</span> <em>minae;</em></p>
+</blockquote></li>
+<li><p>Unit fractions (<span class="math inline">\(\frac{1}{n}\)</span>): <span class="math inline">\(n\)</span><sub>ord.</sub>-μόριον</p>
+<blockquote>
+<p>τριτημόριον <span class="math inline">\(\frac{1}{3}\)</span>, πεμπτημόριον <span class="math inline">\(\frac{1}{5}\)</span>,</p>
+</blockquote></li>
+<li><p><span class="math inline">\(\frac{n + 1}{n}\)</span>-type fractions: ἐπι-<span class="math inline">\(n\)</span><sub>ord.</sub></p>
+<blockquote>
+<p>ἐπίτριτος <span class="math inline">\(1\frac{1}{3}\)</span>, ἐπίπεμπτος <span class="math inline">\(1\frac{1}{5}\)</span>,</p>
+</blockquote></li>
+<li><p>Other fractions (<span class="math inline">\(\frac{n}{m}\)</span>): τῶν <span class="math inline">\(m\)</span> αἱ <span class="math inline">\(n\)</span> μοῖραι</p>
+<blockquote>
+<p>τῶν πέντε αἱ δύο μοῖραι <span class="math inline">\(\frac{2}{5}\)</span>.</p>
+</blockquote></li>
+<li><p><span class="math inline">\(\frac{n}{n + 1}\)</span>-type fractions: τὰ <span class="math inline">\(n\)</span> μέρη</p>
+<blockquote>
+<p>But when the numerator is less by <em>one</em> than the denominator, the genitive is omitted and only the article and μέρη are uses: as τὰ τρία μέρη <span class="math inline">\(\frac{3}{4}\)</span>, <em>i.e. three parts</em> (scil. <em>of four</em>).</p>
+</blockquote></li>
+</ul>
+<h3 id="notations-for-fractions">Notations for fractions</h3>
+<p><span class="citation" data-cites="Heath1931">(Heath 1931, 20–22)</span> explains several fraction notations.</p>
+
+<p>Unit fractions can be expressed with “ʹ” instead of a overbar (e.g., γʹ <span class="math inline">\(\frac{1}{3}\)</span>), aside from special symbols for <span class="math inline">\(\frac{1}{2}\)</span> 𐅵 and <span class="math inline">\(\frac{2}{3}\)</span> 𐅷. <span class="citation" data-cites="Heath1931">(Heath 1931, 20)</span> uses <svg id="half-mark" x="0px" y="0px" width="1ex" height="2ex" viewBox="-10 0 40 100"> <path d="M 0 0 L 0 100 L 30 70" fill="none" stroke="black" stroke-width="5" /> </svg> and 𐅷, respectively.</p>
+<blockquote>
+<p>We find in Archimedes <svg id="half-mark" x="0px" y="0px" width="1ex" height="2ex" viewBox="-10 0 40 100"> <path d="M 0 0 L 0 100 L 30 70" fill="none" stroke="black" stroke-width="5" /> </svg>ʹ δʹ = <span class="math inline">\(\frac{1}{2} \frac{1}{4}\)</span> for <span class="math inline">\(\frac{3}{4}\)</span>, and in Heron κθ 𐅷ʹ ιγʹ λθʹ = <span class="math inline">\(29\frac{2}{3} \frac{1}{13} \frac{1}{39}\)</span> for <span class="math inline">\(29 \frac{10}{13}\)</span>, and so on.</p>
+</blockquote>
+<p>Instead of single “ʹ”, double “″” can be used.</p>
+<blockquote>
+<p>A less orthodox method (found in later manuscripts) was to affix two accents, e.g., ζ″ = <span class="math inline">\(\frac{1}{7}\)</span>. Diophantus uses, instead of the accent, a sign which Tannery printed as <svg id="tannery-mark" x="0px" y="0px" width="2ex" height="2ex" viewBox="-10 0 90 100"><path d="M 0 0 c 30 0 80 40 80 80 m -80 0 l 75 -70" fill="none" stroke="black" stroke-width="5" /></svg>, e.g., γ<sup><svg id="tannery-mark" x="0px" y="0px" width="1ex" height="1ex" viewBox="-10 0 90 100"><path d="M 0 0 c 30 0 80 40 80 80 m -80 0 l 75 -70" fill="none" stroke="black" stroke-width="10" /></svg></sup> = <span class="math inline">\(\frac{1}{3}\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>Hence the numerator could be represented by the ordinary numeral, and the denominator by the accented numeral meaning the aliquot part.</p>
+</blockquote>
 <h2 id="sexagesimal-systems">Sexagesimal Systems</h2>
 <h3 id="sexagesimal">Sexagesimal</h3>
-<p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:48–61)</span>.</p>
+<p>Ancient Greeks inherited sexagesimal (base-60) system invented in Mesopotamian mathematics. In Ancient Greek ordinal number ἑξηκοστός “sixtieth” means fraction 1/60 as well as English, as I explained in the previous section. Minutes is called πρῶτα ἑξηκοστά “first sixtieth,” second is called δεύτερα ἑξηκοστά “second sixtieth,” and so on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:48–61)</span>.</p>
 <ul>
 <li>200′15″: ἀπὸ τῶν λοιπῶν πρώτων ἑξηκοστῶν <span style="text-decoration: overline;">σ</span> καὶ δευτέρων <span style="text-decoration: overline;">ιε</span> <span class="citation" data-cites="GMT1">(Thomas 1991, 1:50)</span></li>
 <li>124′ … 7440″: <span style="text-decoration: overline;">ρκδ</span> πρῶτα ἑξηκοστὰ … εἰς δεύτερα <span style="text-decoration: overline;">͵ζυμ</span> <span class="citation" data-cites="GMT1">(Thomas 1991, 1:58)</span></li>
@@ -673,7 +777,7 @@ var app = Elm.Main.init({
 <li>134°8′: <span style="text-decoration: overline;">ρλδ</span> <span style="text-decoration: overline;">η</span> <span class="citation" data-cites="GMT1">(Thomas 1991, 1:58)</span></li>
 </ul>
 <h3 id="sexagesimal-ptolemy">Sexagesimal Ptolemy</h3>
-<p>Based on <span class="citation" data-cites="GMT1">(Thomas 1991, 1:47)</span></p>
+<p>Ancient Greeks, especially Ptolemy, used zero in sexagesimal fractions. <span class="citation" data-cites="GMT1">(Thomas 1991, 1:47)</span> says</p>
 <blockquote>
 <p>In his sexagesimal notation, Ptolemy used the symbol <strong>O</strong> to stand for οὐδεμία μοῖρα or οὐδὲν ἑξηκοστόν. The diverse views which have been held on this symbol from the time of Delambre are summed up by Loria (<span lang="it"><em>Le scienze esatte nell’ antica Grecia</span>, p.761</em>) in the words: “<span lang="it">In base ai documenti scoperti e decifrati sino ad oggi, siamo autorizzati a negare che i Greci usasserolo zero nel senso e nel modo in cui lo adoperiamo noi.</span>”</p>
 </blockquote>
@@ -687,6 +791,7 @@ var app = Elm.Main.init({
 <ul>
 <li>2019-05-06: Entirely rewritten. Fixed Apollonius method to support monad prefix μ<sup>ο</sup>.</li>
 <li>2019-05-18: Output in words too.</li>
+<li>2019-10-21: Rewrote section “Apollonius” and brushed up others</li>
 </ul>
 <h1 id="abbreviations">Abbreviations</h1>
 <h2 id="general">General</h2>
@@ -711,12 +816,15 @@ var app = Elm.Main.init({
 </dd>
 </dl>
 <h1 id="references" class="unnumbered">References</h1>
-<div id="refs" class="references">
+<div id="refs" class="references" role="doc-bibliography">
 <div id="ref-EmdeBoas2019">
 <p>Emde Boas, Evert van, Huitink Rijksbaron Albert, and Mathieu de Bakker. 2019. <em>Cambridge Grammar of Classical Greek</em>. Cambridge; New York: Cambridge University Press.</p>
 </div>
 <div id="ref-Heath1897">
 <p>Heath, Sir, Thomas Little, ed. 1897. <em>The Works of Archimedes</em>. London, England: Cambridge University Press.</p>
+</div>
+<div id="ref-Heath1931">
+<p>———, ed. 1931. <em>A Manual of Greek Mathematics</em>. Oxford: Clarendon Press.</p>
 </div>
 <div id="ref-Hultsch1876">
 <p>Hultsch, Fridericus, ed. 1876. <em>Pappi Alexandrini collectionis quae supersunt</em>. Vol. 1. Berolini: Apud Weidmannos.</p>
