@@ -1,0 +1,9 @@
+.#*
+.*.sw?
+*~
+/auto
+_site/
+_site_repo/
+_cache/
+.stack-work/
+stack.yaml.lock

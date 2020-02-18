@@ -1,0 +1,23 @@
+name:                na4zagin3-page
+version:             0.1.0.0
+synopsis:            na4zagin3’s personal page
+-- description:
+homepage:            https://github.com/na4zagin3/na4zagin3.github.io#readme
+license:             GPL-3
+-- license-file:        LICENSE
+author:              SAKAMOTO Noriaki
+maintainer:          mrty.ityt.pt@gmail.com
+copyright:           2020 SAKAMOTO Noriaki
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+executable na4zagin3-page
+  main-is:             site.hs
+  default-language:    Haskell2010
+  ghc-options:         -threaded
+  build-depends:       base >= 4.7 && < 5,
+                       hakyll,
+                       pandoc,
+                       containers
