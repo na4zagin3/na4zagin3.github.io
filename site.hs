@@ -11,12 +11,15 @@ cslFile = "csl/apa.csl"
 bibFile :: (IsString s) => s
 bibFile = "ref.bib"
 
+mathJaxUrl :: (IsString s) => s
+mathJaxUrl = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"
+
 myPandocBiblioCompiler :: Compiler (Item String)
 myPandocBiblioCompiler = do
     csl <- load cslFile
     bib <- load bibFile
     let writerOptions = defaultHakyllWriterOptions
-          { Options.writerHTMLMathMethod = Options.MathJax "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML" }
+          { Options.writerHTMLMathMethod = Options.MathJax mathJaxUrl }
           { Options.writerTOCDepth = 2 }
     getResourceBody >>=
         readPandocBiblio defaultHakyllReaderOptions csl bib >>=
@@ -27,7 +30,11 @@ mathCtx = field "mathjax" $ \item -> do
     metadata <- getMetadata $ itemIdentifier item
     return $ case lookupString "mathjax" metadata of
       Just v | v `elem` ["on", "true"] ->
-        "<script type=\"text/javascript\" src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"></script>"
+               mconcat
+               [ "<script type=\"text/javascript\" src=\""
+               , mathJaxUrl
+               , "\"></script>"
+               ]
       Just v -> error (mconcat ["Unknown value '", v, "' for mathjax"])
       Nothing -> ""
 
