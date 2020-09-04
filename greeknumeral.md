@@ -329,7 +329,7 @@ This converter extends the system for numbers greater than 9999,9999, interpreti
 
 Apollonius invented his own way to denote bigger numbers based on myriad [@Hultsch1876, pp. 2--29].
 
-Optionally a number 1 to 9999 may be referred as a multiple of “μ^ο^” meaning μονάς “unit,” then a multiple of ten thousand (1,0000) is expressed as a multiple of “μ^α^” meaning μυριάδες ἁπλαῖ “single myriads.” Similarly squared ten thousand (1,0000,0000) is represented by “μ^β^” meaning μυριάδες διπλαῖ “double myriads,”  cubed  ten thousand (1,0000,0000,0000) by “μ^γ^” meaning μυριάδες τριπλαῖ “triple myriad,” and so on. For example, 12,0045,6789 would be written as μ^β^ [ιβ][.overlined] καὶ μα [με][.overlined] καὶ μ^ο^ [͵ϛψπθ][.overlined] “12 double myriads and 45 single myriads and 6789 units.” 
+Optionally a number 1 to 9999 may be referred as a multiple of “μ^ο^” meaning μονάς “unit,” then a multiple of ten thousand (1,0000) is expressed as a multiple of “μ^α^” meaning μυριάδες ἁπλαῖ “single myriads.” Similarly squared ten thousand (1,0000,0000) is represented by “μ^β^” meaning μυριάδες διπλαῖ “double myriads,”  cubed  ten thousand (1,0000,0000,0000) by “μ^γ^” meaning μυριάδες τριπλαῖ “triple myriad,” and so on. For example, 12,0045,6789 would be written as μ^β^ [ιβ]{.overlined} καὶ μα [με]{.overlined} καὶ μ^ο^ [͵ϛψπθ]{.overlined} “12 double myriads and 45 single myriads and 6789 units.” 
 
 | Symbol   | Word                    | Number                            |
 |----------|-------------------------|-----------------------------------|
