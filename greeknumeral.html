@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>na4zagin3 - Comprehensive Greek Number Converter</title>
+        <title>na4zagin3 - Comprehensive Ancient Greek Number Converter</title>
         <link rel="stylesheet" type="text/css" href="./css/default.css" />
         
             <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
@@ -23,7 +23,7 @@
         </div>
 
         <div id="content">
-            <h1>Comprehensive Greek Number Converter</h1>
+            <h1>Comprehensive Ancient Greek Number Converter</h1>
 
             <p>Source code at GitHub <a href="https://github.com/na4zagin3/elm-grcnum">na4zagin3/elm-grcnum</a>.</p>
 <h1 id="converter">Converter</h1>
@@ -110,7 +110,7 @@ var app = Elm.Main.init({
 });
 </script>
 <p>Inspired from Russell Cottrell’s <a href="http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm">Greek Number Converter</a>.</p>
-<p>This document is to provide reliable information and interactive converters of Ancient Greek number systems with proper citations. Currently, it is difficult to find correct information about Ancient Greek number systems in the Internet. For example, Harry Foundalis’ <a href="https://www.foundalis.com/lan/grknum.htm"><em>Greek Numbers and Numerals (Ancient and Modern)</em></a> contains comprehensive description about Modern Greek, but the section about Ancient Greek contains several problems—he insists that Archimedes (287–212 BCE) came up with numerals greater than 1,0000, while Herodotus (484–425 BCE) and others before Archimedes, in fact, casually used δισμύριοι 2,0000 and so on: “ἄνδρες τετρακισχίλιοι καὶ δισμύριοι γίνονται.”—Herodotus <em>Historia</em> 7.185.1. John J O’Connor and Edmund F Robertson’s <a href="http://www-history.mcs.st-and.ac.uk/HistTopics/Greek_numbers.html"><em>Greek Number Systems</em></a> clearly shows they could not read Ancient or Modern Greek or could not consult people having studied Classics in their university. Russell Cottrell’s The Greek Number Converter is confusing people—an author of Wikipedia.ja’s article ギリシアの数字 “Greek Numerals” misunderstood as the method he invented was actually used by Ancient Greeks.</p>
+<p>This document is to provide reliable information and interactive converters of Ancient Greek number systems with proper citations. Currently, it is difficult to find correct information about Ancient Greek number systems in the Internet. For example, Harry Foundalis’ <a href="https://www.foundalis.com/lan/grknum.htm"><em>Greek Numbers and Numerals (Ancient and Modern)</em></a> contains comprehensive description about Modern Greek, but the section about Ancient Greek contains several problems—he insists that Archimedes (287–212 BCE) came up with numerals greater than 1,0000, while Herodotus (484–425 BCE) and others before Archimedes, in fact, casually used δισμύριοι 2,0000 and so on: “ἄνδρες τετρακισχίλιοι καὶ δισμύριοι γίνονται.”—Herodotus <em>Historia</em> 7.185.1. John J O’Connor and Edmund F Robertson’s <a href="http://www-history.mcs.st-and.ac.uk/HistTopics/Greek_numbers.html"><em>Greek Number Systems</em></a> clearly shows they could not read either Ancient or Modern Greek or could not consult people having studied Classics. Russell Cottrell’s The Greek Number Converter is confusing people—an author of article ギリシアの数字 “Greek Numerals” in Wikipedia.ja misunderstood that the method Russell Cottrell invented was actually used by Ancient Greeks.</p>
 <h1 id="notations">Notations</h1>
 <p>In this document, I use myriad (meaning <em>ten-thousand</em>) separators (e.g., 1234,5678,9012) rather than thousand separators (e.g., 123,456,789,012). That is because Ancient Greek numerals are, like Chinese and Japanese, based on ten thousand—therefore 20,0000 or 200,000 is expressed as <em>twenty ten-thousand</em> (εἴκωσι μυριάδες) rather than <em>two hundred thousand</em> (διακόσιοι χίλιοι). Ancient Greeks also used sexagesimal systems, or base-60 system, by influence of Mesopotamian mathematics. For sexagesimal notations, I write 12°34′56″7‴8⁗ for degrees (360 degrees = 1 turn), 12<sup>p</sup>34′56″7‴8⁗ for segments (120 segments = 1 diameter; “p” stands for <em>partes</em> “parts”), and modern notation like 1,2;3,4 for general sexagesimal fractions. In modern sexagesimal notation, “,” is a sexagesimal separator and “;” is followed by a fraction part. Therefore <span class="math inline">\(\text{1,2;3,4} = 1 \times 60 + 2 + \frac{3}{60} + \frac{4}{60^2}\)</span>.</p>
 <p>Throughout the document Greek texts lowercase and uppercase letters are distinguished (e.g., μ vs. Μ) for readability and to follow modern printing conventions. That distinction <em>did not exist</em> in Ancient Greek; minuscule script was invented in 9th century <span class="citation" data-cites="Irigoin1996">(Irigoin, 1996, p. 69)</span>.</p>
@@ -594,7 +594,7 @@ var app = Elm.Main.init({
 <p>This converter extends the system for numbers greater than 9999,9999, interpreting the system “putting Μ between every myriads.”</p>
 <h3 id="apollonius">Apollonius</h3>
 <p>Apollonius invented his own way to denote bigger numbers based on myriad <span class="citation" data-cites="Hultsch1876">(Hultsch, 1876, pp. 2–29)</span>.</p>
-<p>Optionally a number 1 to 9999 may be referred as a multiple of “μ<sup>ο</sup>” meaning μονάς “unit,” then a multiple of ten thousand (1,0000) is expressed as a multiple of “μ<sup>α</sup>” meaning μυριάδες ἁπλαῖ “single myriads.” Similarly squared ten thousand (1,0000,0000) is represented by “μ<sup>β</sup>” meaning μυριάδες διπλαῖ “double myriads,” cubed ten thousand (1,0000,0000,0000) by “μ<sup>γ</sup>” meaning μυριάδες τριπλαῖ “triple myriad,” and so on. For example, 12,0045,6789 would be written as μ<sup>β</sup> <span class="overlined">ιβ</span> καὶ μα <span class="overlined">με</span> καὶ μ<sup>ο</sup> <span class="overlined">͵ϛψπθ</span> “12 double myriads and 45 single myriads and 6789 units.”</p>
+<p>Optionally a number 1 to 9999 may be referred as a multiple of “μ<sup>ο</sup>” meaning μονάς “unit,” then a multiple of ten thousand (1,0000) is expressed as a multiple of “μ<sup>α</sup>” meaning μυριάδες ἁπλαῖ “single myriads.” Similarly squared ten thousand (1,0000,0000) is represented by “μ<sup>β</sup>” meaning μυριάδες διπλαῖ “double myriads,” cubed ten thousand (1,0000,0000,0000) by “μ<sup>γ</sup>” meaning μυριάδες τριπλαῖ “triple myriad,” and so on. For example, 12,0045,6789 would be written as μ<sup>β</sup> <span class="overlined">ιβ</span> καὶ μ<sup>α</sup> <span class="overlined">με</span> καὶ μ<sup>ο</sup> <span class="overlined">͵ϛψπθ</span> “12 double myriads and 45 single myriads and 6789 units.”</p>
 <table>
 <thead>
 <tr class="header">
@@ -637,11 +637,11 @@ var app = Elm.Main.init({
 </tbody>
 </table>
 <p>His system is similar to 萬進法 “base-ten-thousand system” used in East Asia, comparing to Archimedes’s one similar to 萬萬進法 “base-hundred-million system.”</p>
-<p>Due to limitation of printing technology, (Hultsch 1876) typeset an exponent as a superscript as μ<sup>ο</sup>, while two manuscripts, Vat. gr. 218 and Par. gr. 2440, wrote the exponent above μ. In this converter I adopt stacking rather than superscripts.</p>
+<p>Due to limitation of printing technology, (Hultsch 1876) typeset an exponent as a superscript as μ<sup>ο</sup>, while two manuscripts, Vat. gr. 218 and Par. gr. 2440, wrote the exponent above μ. I use superscripts in the description texts and stacked numbers in the converter.</p>
 <h4 id="modified-apollonius">Modified Apollonius</h4>
 <p>In Apollonius notation, μ<sup>ο</sup> could represents both μονάδες “units” and μυριάδες ἑβδομηκονταπλαῖ “60-fold myriads.” To distinguish them I introduced case distinction—lowercase μ for μ<sup>ο</sup> “μονάδες” and uppercase Μ for Μ<sup>α</sup> “μυριάδες ἁπλαῖ”, Μ<sup>β</sup> “μυριάδες διπλαῖ”, and so on.</p>
 <h4 id="russell-cottrells-notation">Russell Cottrell’s Notation</h4>
-<p><strong>This notation is not used by Ancient Greeks. As of now, there is no method to spell out numbers written in this notation.</strong></p>
+<p><strong>Russell Cottrell’s Notation explained in this section was not used by Ancient Greeks. As of now, there is no method to spell out numbers written in this notation.</strong></p>
 <p>This is based on a idea proposed by Russell Cottrell. Although his description is contradicting to his converter’s outputs, he gave some examples in his Greek Number Converter <a href="http://www.russellcottrell.com/greek/utilities/GreekNumberConverter.htm">Greek Number Converter</a>:</p>
 <blockquote>
 <p>Partly because of limitations imposed by web page forms, I have modernized the rendering slightly by placing the power of the myriad beside, rather than above, the M; separating the groups by commas; and using the later convention of accent-like upper and lower numeral signs instead of an iota superscript.</p>
@@ -691,57 +691,82 @@ var app = Elm.Main.init({
 <li>αΜγΜδʹ,αΜβʹʹ,εʹʹΜϛʹ,ζʹΜη,θʹ <span class="math inline">\(= 10000^{10000^{10000^1 \times 3} \times 4 + 10000^{10000^1 \times 2+5} \times 6 + 7} \times 8 + 9\)</span></li>
 </ul>
 <h3 id="archimedes">Archimedes</h3>
-<p>Archimedes invented myriad-myriad based numerals in <em>The Sand Reckoner</em> <span class="citation" data-cites="Heath1897">(Heath, 1897, pp. 227–229)</span>. He introduced a numeral αἱ <em>l</em>-στᾶς περιόδου <em>m</em>-στῶν ἀριθμῶν <em>n</em>, meaning “number <em>n</em> of the <em>m</em>-th order of the <em>l</em>-th period,” expressing <span class="math inline">\(n × d(l − 1)d + m − 1\)</span>, where <span class="math inline">\(d = 1,0000,0000\)</span>. In his system, the biggest number is αἱ μυριακισμυριοστᾶς περιόδου μυριακισμυριοστῶν ἀριθμῶν μυρίαι μυριάδες a myriad-myriad units of the myriad-myriad-th order of the myriad-myriad-th period, which is <span class="math inline">\(10^{8 × 10^{16}}\)</span>.</p>
+<p>Archimedes invented myriad-myriad based numerals in <em>The Sand Reckoner</em> <span class="citation" data-cites="Heath1897">(Heath, 1897, pp. 227–229)</span>. He introduced a numeral αἱ <em>l</em>-στᾶς περιόδου <em>m</em>-στῶν ἀριθμῶν <em>n</em>, meaning “number <em>n</em> of the <em>m</em>-th order of the <em>l</em>-th period,” expressing <span class="math inline">\(n × d^{(l − 1)d + m − 1}\)</span>, where <span class="math inline">\(d = 1,0000,0000\)</span>. In his system, the biggest number is αἱ μυριακισμυριοστᾶς περιόδου μυριακισμυριοστῶν ἀριθμῶν μυρίαι μυριάδες a myriad-myriad units of the myriad-myriad-th order of the myriad-myriad-th period, which is <span class="math inline">\(10^{8 × 10^{16}}\)</span>.</p>
 <h2 id="fractions">Fractions</h2>
 <h3 id="words-representing-fractions">Words representing fractions</h3>
-<!--
-Basically there are three systems of fractions used by Ancient Greeks. Unit fraction series, juxtaposition, and stacking.
-Firstly, unit fraction is denoted by a denominator symbol “″” for example δ″ ¼ and ιε″ 1/15. They had special symbol for some special fractions like S ½.
-Similar to Egyptians, Ancient Greeks also preferred to denote a fraction as a sum of unit fractions. For example, ¾ was written S″δ″ = ½ + ¼. 
-For non-unit fractions can be expressed as a pair of a numerator and a denominator. They may be juxtaposed like θ′ια″ 9/11. Heron repeated a denominator twice like θ′ια″ια″.  Diophantus also spelled out word ἐν μορίῳ “in a part of” or μορίου “part of” as in τϛ.͵θ μορ. λγ.͵αψοϛ “306,9000/33,1776.”
-Diophantos also vertically stacked a numerator and a denominator like modern notation, except for their positions are swapped.   Like = 5/3 and  = 127,0568/1,0816.
--->
-<p><span class="citation" data-cites="Smyth1920">(Smyth, 1920, sec. 357)</span> exemplifies several methods:</p>
+<p>There are several ways to express fractions.</p>
 <ul>
-<li><p><span class="math inline">\(\frac{1}{2}\)</span>: ἥμισυς, ἥμισυς + gen, or a compound word</p>
+<li><p>Half (<span class="math inline">\(\frac{1}{2}\)</span>): ἥμισυς, ἥμισυς + gen, or ἥμι-<em>noun</em></p>
 <blockquote>
-<p>ἥμισυς <span class="math inline">\(\frac{1}{2}\)</span>, ὁ ἥμισυς τοῦ ἀριθμοῦ <em>half the number,</em> αἱ ἡμίσειαι τῶν νεῶν <em>half of the ships,</em> τὸ ἥμισυ τοῦ στρατοῦ <em>half the army,</em> ἡμιτάλαντον <em>half a talent;</em></p>
+<p>ἥμισυς <span class="math inline">\(\frac{1}{2}\)</span> ὁ ἥμισυς τοῦ ἀριθμοῦ <em>half the number,</em> αἱ ἡμίσειαι τῶν νεῶν <em>half of the ships,</em> τὸ ἥμισυ τοῦ στρατοῦ <em>half the army</em> ἡμιτάλαντον <em>half a talent;</em> <span class="citation" data-cites="Smyth1920">(Smyth, 1920, sec. 357)</span></p>
 </blockquote></li>
-<li><p>Half-integers (<span class="math inline">\(\frac{n}{2}\)</span>): <span class="math inline">\(n\)</span> ἥμισυς</p>
+<li><p>Half-integer A (<span class="math inline">\(\frac{n}{2}\)</span>): <span class="math inline">\(n\)</span> ἥμι-<em>noun</em></p>
 <blockquote>
-<p>τρία ἡμιτάλαντα <span class="math inline">\(1\frac{1}{2}\)</span> <em>talents,</em> τρίτον ἡμίμναιον <span class="math inline">\(2\frac{1}{2}\)</span> <em>minae;</em></p>
+<p>τρία ἡμιτάλαντα <span class="math inline">\(1\frac{1}{2}\)</span> <em>talents,</em> <span class="citation" data-cites="Smyth1920">(Smyth, 1920, sec. 357)</span></p>
+</blockquote>
+<p>N.B.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> <span class="math inline">\(n\)</span> ἥμισυς means <span class="math inline">\(n\frac{1}{2}\)</span>, not <span class="math inline">\(\frac{n}{2}\)</span>.</p></li>
+<li><p>Half-integer B (<span class="math inline">\(m-\frac{1}{2}\)</span>): <span class="math inline">\(m\)</span><sub>ord.</sub> ἥμι-<em>noun</em> or <span class="math inline">\(m\)</span><sub>ord.</sub> ἥμισυς</p>
+<blockquote>
+<p>τρίτον ἡμίμναιον <span class="math inline">\(2\frac{1}{2}\)</span> <em>minae;</em> <span class="citation" data-cites="Smyth1920">(Smyth, 1920, sec. 357)</span></p>
+</blockquote>
+<blockquote>
+<p>Ἴωνες καὶ Ἀττικοὶ τά δύο ἥμισυ <strong>ἥμισυ τρίτον</strong><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> φασίν ※ προθεὶς τὸ ἐν δὲ Βατουσιάδης ἐν τῷ περὶ μοθσικῆς ἐπιφέρει <strong>τρίτον ἡμιπόδιον·</strong> καὶ τὰ ἓξ ἥμισυ τάλαντα <strong>ἕβδομον ἡμιτάλαντον</strong> καὶ τοὺς τέσσαρας ἥμισυ πήχεις <strong>πέμπτην σπιθαμήν</strong><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>, καθάπερ φησὶν Ἡρόδοτος. και καθόλου sqq. <span class="citation" data-cites="Keil1860">(Keil, 1860, p. 11)</span> [emphasis and footnotes added]</p>
 </blockquote></li>
-<li><p>Unit fractions (<span class="math inline">\(\frac{1}{n}\)</span>): <span class="math inline">\(n\)</span><sub>ord.</sub>-μόριον</p>
+<li><p>Unit fraction (<span class="math inline">\(\frac{1}{n}\)</span>): <span class="math inline">\(n\)</span><sub>ord.</sub>-μόριον</p>
 <blockquote>
-<p>τριτημόριον <span class="math inline">\(\frac{1}{3}\)</span>, πεμπτημόριον <span class="math inline">\(\frac{1}{5}\)</span>,</p>
+<p>τριτημόριον <span class="math inline">\(\frac{1}{3}\)</span>, πεμπτημόριον <span class="math inline">\(\frac{1}{5}\)</span>, <span class="citation" data-cites="Smyth1920">(Smyth, 1920, sec. 357)</span></p>
 </blockquote></li>
-<li><p><span class="math inline">\(\frac{n + 1}{n}\)</span>-type fractions: ἐπι-<span class="math inline">\(n\)</span><sub>ord.</sub></p>
+<li><p><span class="math inline">\(\frac{n + 1}{n}\)</span>-type fraction: ἐπι-<span class="math inline">\(n\)</span><sub>ord.</sub></p>
 <blockquote>
-<p>ἐπίτριτος <span class="math inline">\(1\frac{1}{3}\)</span>, ἐπίπεμπτος <span class="math inline">\(1\frac{1}{5}\)</span>,</p>
+<p>ἐπίτριτος <span class="math inline">\(1\frac{1}{3}\)</span>, ἐπίπεμπτος <span class="math inline">\(1\frac{1}{5}\)</span>, <span class="citation" data-cites="Smyth1920">(Smyth, 1920, sec. 357)</span></p>
 </blockquote></li>
-<li><p>Other fractions (<span class="math inline">\(\frac{n}{m}\)</span>): τῶν <span class="math inline">\(m\)</span> αἱ <span class="math inline">\(n\)</span> μοῖραι</p>
+<li><p>Other fraction (<span class="math inline">\(\frac{n}{m}\)</span>): τῶν <span class="math inline">\(m\)</span> αἱ <span class="math inline">\(n\)</span> μοῖραι or <span class="math inline">\(n\)</span> <span class="math inline">\(m\)</span><sub>ord.</sub>-μόριον</p>
 <blockquote>
-<p>τῶν πέντε αἱ δύο μοῖραι <span class="math inline">\(\frac{2}{5}\)</span>.</p>
+<p>τῶν πέντε αἱ δύο μοῖραι <span class="math inline">\(\frac{2}{5}\)</span>. <span class="citation" data-cites="Smyth1920">(Smyth, 1920, sec. 357)</span></p>
+</blockquote>
+<blockquote>
+<p>ἡ ὑπεροχὴ τῶν ὀκτὼ <strong>δύο τριτημόριον</strong> <span class="citation" data-cites="Bernardakis1895">(Bernardakis, 1895, p. 190)</span> [emphasis mine]</p>
 </blockquote></li>
-<li><p><span class="math inline">\(\frac{n}{n + 1}\)</span>-type fractions: τὰ <span class="math inline">\(n\)</span> μέρη</p>
+<li><p><span class="math inline">\(\frac{n}{n + 1}\)</span>-type fraction: τὰ <span class="math inline">\(n\)</span> μέρη</p>
 <blockquote>
-<p>But when the numerator is less by <em>one</em> than the denominator, the genitive is omitted and only the article and μέρη are uses: as τὰ τρία μέρη <span class="math inline">\(\frac{3}{4}\)</span>, <em>i.e. three parts</em> (scil. <em>of four</em>).</p>
+<p>But when the numerator is less by <em>one</em> than the denominator, the genitive is omitted and only the article and μέρη are uses: as τὰ τρία μέρη <span class="math inline">\(\frac{3}{4}\)</span>, <em>i.e. three parts</em> (scil. <em>of four</em>). <span class="citation" data-cites="Smyth1920">(Smyth, 1920, sec. 357)</span></p>
+</blockquote></li>
+<li><p>Unit fraction series (<span class="math inline">\(\frac{1}{m}+\frac{1}{n}+\cdots\)</span>): <span class="math inline">\(m\)</span><sub>ord.</sub> <span class="math inline">\(n\)</span><sub>ord.</sub> ⋯</p>
+<p><span class="math inline">\(\frac{1}{2}\)</span> is represented by ἥμισυς, not δεύτερος<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.</p>
+<blockquote>
+<p>δέκα ἓξ ἥμισυ τρίτον ὄγδοον<br />
+(ἀρτάβαι) ιϛ 𐅵 γ´ η´</p>
+<!-- TODO Image -->
+<p><a href="http://papyri.info/ddbdp/bgu;3;988">bgu.3.988, ll. 16–17</a> (100 A.D.)</p>
 </blockquote></li>
 </ul>
+<p>Mixed fractions are simply represented by juxtaposing an integer and a fraction.</p>
+<blockquote>
+<p>also ἀνὰ δύο ἥμισυ ζῳδίων <em>amounting to</em> 2<span class="math inline">\(\frac{1}{2}\)</span> signs, Autol.1.10 <span class="citation" data-cites="LSJ1940">(Liddell et al., 1940, “ἀνά” C.III.)</span></p>
+</blockquote>
+<!-- TODO Examples -->
 <h3 id="notations-for-fractions">Notations for fractions</h3>
 <p><span class="citation" data-cites="Heath1931">(Heath, 1931, pp. 20–22)</span> explains several fraction notations.</p>
 
-<p>Unit fractions can be expressed with “ʹ” instead of a overbar (e.g., γʹ <span class="math inline">\(\frac{1}{3}\)</span>), aside from special symbols for <span class="math inline">\(\frac{1}{2}\)</span> 𐅵 and <span class="math inline">\(\frac{2}{3}\)</span> 𐅷. <span class="citation" data-cites="Heath1931">(Heath, 1931, p. 20)</span> uses <svg id="half-mark" x="0px" y="0px" width="1ex" height="2ex" viewBox="-10 0 40 100"> <path d="M 0 0 L 0 100 L 30 70" fill="none" stroke="black" stroke-width="5"></path> </svg> and 𐅷, respectively.</p>
+<p>Unit fractions can be expressed with “ʹ” instead of a overbar (e.g., γʹ <span class="math inline">\(\frac{1}{3}\)</span>), aside from special symbols for <span class="math inline">\(\frac{1}{2}\)</span> 𐅵 and <span class="math inline">\(\frac{2}{3}\)</span> 𐅷. <!-- [@Heath1931, p. 20] uses 
+<svg id="half-mark" x="0px" y="0px" width="1ex" height="2ex" viewBox="-10 0 40 100">
+  <path d="M 0 0 L 0 100 L 30 70" fill="none" stroke="black" stroke-width="5" />
+</svg>
+and 𐅷, respectively.
+--></p>
 <blockquote>
-<p>We find in Archimedes <svg id="half-mark" x="0px" y="0px" width="1ex" height="2ex" viewBox="-10 0 40 100"> <path d="M 0 0 L 0 100 L 30 70" fill="none" stroke="black" stroke-width="5"></path> </svg>ʹ δʹ = <span class="math inline">\(\frac{1}{2} \frac{1}{4}\)</span> for <span class="math inline">\(\frac{3}{4}\)</span>, and in Heron κθ 𐅷ʹ ιγʹ λθʹ = <span class="math inline">\(29\frac{2}{3} \frac{1}{13} \frac{1}{39}\)</span> for <span class="math inline">\(29 \frac{10}{13}\)</span>, and so on.</p>
+<p>We find in Archimedes <svg id="half-mark" x="0px" y="0px" width="1ex" height="2ex" viewBox="-10 0 40 100"> <path d="M 0 0 L 0 100 L 30 70" fill="none" stroke="black" stroke-width="5"></path> </svg>ʹ δʹ = <span class="math inline">\(\frac{1}{2} \frac{1}{4}\)</span> for <span class="math inline">\(\frac{3}{4}\)</span>, and in Heron κθ 𐅷ʹ ιγʹ λθʹ = <span class="math inline">\(29\frac{2}{3} \frac{1}{13} \frac{1}{39}\)</span> for <span class="math inline">\(29 \frac{10}{13}\)</span>, and so on. <span class="citation" data-cites="Heath1931">(Heath, 1931, p. 20)</span></p>
 </blockquote>
 <p>Instead of single “ʹ”, double “″” can be used.</p>
 <blockquote>
 <p>A less orthodox method (found in later manuscripts) was to affix two accents, e.g., ζ″ = <span class="math inline">\(\frac{1}{7}\)</span>. Diophantus uses, instead of the accent, a sign which Tannery printed as <svg id="tannery-mark" x="0px" y="0px" width="2ex" height="2ex" viewBox="-10 0 90 100"><path d="M 0 0 c 30 0 80 40 80 80 m -80 0 l 75 -70" fill="none" stroke="black" stroke-width="5"></path></svg>, e.g., γ<sup><svg id="tannery-mark" x="0px" y="0px" width="1ex" height="1ex" viewBox="-10 0 90 100"><path d="M 0 0 c 30 0 80 40 80 80 m -80 0 l 75 -70" fill="none" stroke="black" stroke-width="10"></path></svg></sup> = <span class="math inline">\(\frac{1}{3}\)</span>.</p>
+<p>Hence the numerator could be represented by the ordinary numeral, and the denominator by the accented numeral meaning the aliquot part. <span class="citation" data-cites="Heath1931">(Heath, 1931, p. 20)</span></p>
 </blockquote>
-<blockquote>
-<p>Hence the numerator could be represented by the ordinary numeral, and the denominator by the accented numeral meaning the aliquot part.</p>
-</blockquote>
+<!-- TODO Fractions
+For non-unit fractions can be expressed as a pair of a numerator and a denominator. They may be juxtaposed like θ′ια″ 9/11. Heron repeated a denominator twice like θ′ια″ια″.  Diophantus also spelled out word ἐν μορίῳ “in a part of” or μορίου “part of” as in τϛ.͵θ μορ. λγ.͵αψοϛ “306,9000/33,1776.”
+
+Diophantus also vertically stacked a numerator and a denominator like modern notation, except for their positions are swapped.   Like = 5/3 and  = 127,0568/1,0816.
+-->
 <h2 id="sexagesimal-systems">Sexagesimal Systems</h2>
 <h3 id="sexagesimal">Sexagesimal</h3>
 <p>Ancient Greeks inherited sexagesimal (base-60) system invented in Mesopotamian mathematics. In Ancient Greek ordinal number ἑξηκοστός “sixtieth” means fraction 1/60 as well as English, as I explained in the previous section. Minutes is called πρῶτα ἑξηκοστά “first sixtieth,” second is called δεύτερα ἑξηκοστά “second sixtieth,” and so on <span class="citation" data-cites="GMT1">(Thomas, 1991, pp. 48–61)</span>.</p>
@@ -767,6 +792,7 @@ Diophantos also vertically stacked a numerator and a denominator like modern not
 <li>2019-05-06: Entirely rewritten. Fixed Apollonius method to support monad prefix μ<sup>ο</sup>.</li>
 <li>2019-05-18: Output in words too.</li>
 <li>2019-10-21: Rewrote section “Apollonius” and brushed up others</li>
+<li>2020-09-06: Brushed up section “Fractions”</li>
 </ul>
 <h1 id="abbreviations">Abbreviations</h1>
 <h2 id="general">General</h2>
@@ -790,8 +816,20 @@ Diophantos also vertically stacked a numerator and a denominator like modern not
 <dd><a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0233">Polybius, <em>Histories</em></a>
 </dd>
 </dl>
+<h2 id="papyri">Papyri</h2>
+<dl>
+<dt>bgu.3.988</dt>
+<dd><a href="http://papyri.info/ddbdp/bgu;3;988" class="uri">http://papyri.info/ddbdp/bgu;3;988</a>
+</dd>
+</dl>
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
+<div id="ref-Bergk1882">
+<p>Bergk, T. (Ed.). (1882). <em>Poetae Lyrici Graeci</em> (Vol. 2). Aedigus B.G. Teubneri. <a href="https://archive.org/details/poetaelyricigrae02berguoft" class="uri">https://archive.org/details/poetaelyricigrae02berguoft</a></p>
+</div>
+<div id="ref-Bernardakis1895">
+<p>Bernardakis, G. N. (Ed.). (1895). <em>Plutarchi Chaeronensis Moralia</em> (Vol. 4). Aedibus B.G. Teubneri. <a href="https://archive.org/details/plutarchichaero12berngoog" class="uri">https://archive.org/details/plutarchichaero12berngoog</a></p>
+</div>
 <div id="ref-EmdeBoas2019">
 <p>Emde Boas, E. van, Rijksbaron, H., Albert, &amp; Bakker, M. de. (2019). <em>Cambridge grammar of classical Greek</em>. Cambridge University Press.</p>
 </div>
@@ -807,8 +845,20 @@ Diophantos also vertically stacked a numerator and a denominator like modern not
 <div id="ref-Irigoin1996">
 <p>Irigoin, J. (1996). Les origines de la capitale typographique grecque 1476–1550. In M. S. Macrakis (Ed.), <em>Greek Letters: From Tablets to Pixels</em> (pp. 69–81). Ork Knoll Press.</p>
 </div>
+<div id="ref-Keil1860">
+<p>Keil, H. (1860). <em>Questiones grammaticae</em>. Typis B.G. Teubneri. <a href="https://archive.org/details/quaestionesgram00keilgoog" class="uri">https://archive.org/details/quaestionesgram00keilgoog</a></p>
+</div>
+<div id="ref-LSJ1940">
+<p>Liddell, H. G., Scott, R., &amp; Jones, S., Henry Stuart (Eds.). (1940). <em>A Greek-English lexicon</em> (9th ed., Vols. 1–2). Clarendon Press.</p>
+</div>
 <div id="ref-Unicode-L2/04-054">
 <p>Mercier, R. (2004). <em>Proposal to encode Greek zero in the UCS</em> (L2/04-054). Unicode. <a href="https://www.unicode.org/L2/L2004/04054r-greek-zero.pdf" class="uri">https://www.unicode.org/L2/L2004/04054r-greek-zero.pdf</a></p>
+</div>
+<div id="ref-Montanari-ἡμισύτριτον-2020-09-05">
+<p>Montanari, F. (Ed.). (2015). <em>Ἡμισύτριτον</em>. <a href="https://dictionaries.brillonline.com/search#dictionary=montanari&amp;id=52017" class="uri">https://dictionaries.brillonline.com/search#dictionary=montanari&amp;id=52017</a></p>
+</div>
+<div id="ref-Passow1847">
+<p>Passow, F. (1847). <em>Handwörterbuch der griechischen Sprache</em> (5th ed., Vol. 1.2). Friedrich Christian Wilhelm Vogel.</p>
 </div>
 <div id="ref-Smyth1920">
 <p>Smyth, H. W. (1920). <em>Greek grammar for colleges</em>. American Book Company.</p>
@@ -820,6 +870,37 @@ Diophantos also vertically stacked a numerator and a denominator like modern not
 <p>Thomas, I. (Ed.). (1993). <em>Greek methematical works: Aristarchus to Pappus</em> (Vol. 2). Harvard University Press.</p>
 </div>
 </div>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Citation requred.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Compound numeral ἥμισυ τρίτον usually represents unit fraction series <span class="math inline">\(\frac{1}{2} + \frac{1}{3}\)</span>.</p>
+<p>Passow’s dictionary <span class="citation" data-cites="Passow1847">(Passow, 1847)</span>, which LSJ based on, regarded this ἥμισυ τρίτον as a single word meaning <span class="math inline">\(2\frac{1}{2}\)</span> rather</p>
+<blockquote>
+<p>ἡμισύτρῐτον, τό, Hesych., richtiger ἥμισυ τρίτον, drittenhalb, wofür Spätere δύο ἥμισυ sagten; vgl. Didym. b. Prisc. t. 2. p. 395 Krehl.</p>
+</blockquote>
+<p>while <span class="citation" data-cites="LSJ1940">(Liddell et al., 1940)</span></p>
+<blockquote>
+<p>ἡμῐσύ-τρῐτον, τό, <em>a third half,</em> i.e. <em>one</em> [sic] <em>and a half,</em> Archil.167.</p>
+</blockquote>
+<p>and <span class="citation" data-cites="Montanari-ἡμισύτριτον-2020-09-05">(Montanari, 2015, “ἡμισύτριτον” accessed on 2020-09-05)</span></p>
+<blockquote>
+<p><strong>ἡμισύτριτον</strong> -ου, τό</p>
+<p>[ἥμισυς, τρίτος]</p>
+<p><strong>half of three,</strong> <em>i.e.</em> 1½<br />
+<span class="smallcaps">Archil.</span> 243</p>
+<p>● <em>written for</em> ἥμισυ τρίτον.</p>
+</blockquote>
+<p>gave sense <span class="math inline">\(1\frac{1}{2}\)</span>, referencing the following fragment <span class="citation" data-cites="Bergk1882">(Bergk, 1882, p. 431)</span>.</p>
+<blockquote>
+<p>167. [147.]</p>
+<p>Hesych.: <span class="sperrsatz">ἥμισυ τρίτον·</span> δύο ἥμισυ· Ἀρχίλοχος H. Keil (Quaest. Gramm. p. 12) putat Archilochi nomen ex errore ortum: Hesychium usum grammatico, qui τρίτον ἥμισυ et τρίτον ἡμιπόδιον explicaverit, adhibito Archilochi versu: ἐν δὲ Βατουσιάδης, male Archilochi testimonoum retulisse ad ἥμισυ τρίτον. Quae non recte disputata esse docui Philol. XVI 587 seq.</p>
+</blockquote>
+<p>Regardless of which ἥμισυ τρίτον was an error, it clearly means δύο ἥμισυ <span class="math inline">\(2\frac{1}{2}\)</span> in this context rather than <span class="math inline">\(1\frac{1}{2}\)</span> given in LSJ.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>1 <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0057:entry=ph=xus">σπιθαμαί</a> <em>span</em> = 1 ἡμίπηχυς <em>half-qubit</em> = ½ <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0057:entry=ph=xus">πήχυς</a> <em>qubits</em><a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Citation required.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
         </div>
         <div id="footer">
             Site proudly generated by
