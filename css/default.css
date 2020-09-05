@@ -62,3 +62,11 @@ div.info {
 .overlined {
     text-decoration: overline;
 }
+
+.smallcaps {
+    font-variant: small-caps;
+}
+
+.sperrsatz {
+    letter-spacing: .2ex;
+}
