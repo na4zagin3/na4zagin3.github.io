@@ -16,26 +16,43 @@ Source code at GitHub [na4zagin3/elm-grcnum](https://github.com/na4zagin3/elm-gr
 <script>
 var translations =
   { extended: " (extended)"
-  , tooBig: "unsupported"
+  , tooBig: "unsupported/too big"
   , inputIn: "Input in "
   , numberToConvert: "Number to convert"
   , convertFrom: "Converted from"
   , decimalButton: "decimal"
-  , decimalFormat: "Input a number without separators. E.g., 1234"
-  , fractionButton: "fraction"
-  , fractionFormat: "Input a fraction or a series of unit fractions. E.g., 355/113 or 1/2+1/3+1/5"
+  , decimalFormat: "Input a number without separators. E.g., “1234”."
   , sexagesimalButton: "sexagesimal"
-  , sexagesimalFormat: "Input in modern sexagesimal notation. E.g., 12;34,5 (meaning 12°34′5″)"
+  , sexagesimalFormat: "Input in modern sexagesimal notation. E.g., “12;34,5” (meaning 12°34′5″)."
+  , fractionButton: "fraction"
+  , fractionFormat: "Input a fraction or a series of unit fractions. E.g., “355/113” or “1/2+1/3+1/5”."
+  , inflectionSlotDesc: "Input value may be followed by a space and inflection specifiers like “123 acc. fem. sg.”."
 
   , experimentalNote: "* Experimental"
 
-  , cardinalSingMascDesc:
-        { href: "#cardinal"
-        , label: "Cardinal (nominative masculine form, descending order)*"
+  , cardinalAscDesc:
+        { href: null
+        , label: "Cardinal (ascending)*"
+        }
+  , cardinalDescDesc:
+        { href: null
+        , label: "Cardinal (descending, with καί)*"
+        }
+  , cardinalDescJuxtDesc:
+        { href: null
+        , label: "Cardinal (descending, without καί)*"
+        }
+  , ordinalDesc:
+        { href: null
+        , label: "Ordinal (descending order)*"
         }
   , adverbial:
         { href: "#adverbial"
         , label: "Adverbial*"
+        }
+  , plous:
+        { href: null
+        , label: "Multiplicative"
         }
   , attic: 
         { href: "#attic"
@@ -60,6 +77,10 @@ var translations =
   , modifiedApollonius: 
         { href: "#modified-apollonius"
         , label: "Modified Apollonius"
+        }
+  , apolloniusSpelledOut:
+        { href: "#aristarchus"
+        , label: "Apollonius (spelled out)*"
         }
 
   , fracDiophantus:
@@ -155,7 +176,7 @@ Cardinal numbers are _one,_ _two,_ _three_ and so on; ordinal numbers are _first
 |    1000 | χῑ́λιοι, -αι, -α                         | χιλῑστός, -ή, -όν       | χῑλιάκις           |
 |    2000 | δισχῑ́λιοι                               | δισχῑλιοστός            | δισχῑλιάκις        |
 |    3000 | τρισχῑ́λιοι                              | τρισχῑλιοστός           | τρισχῑλιάκις       |
-|  1,0000 | μῡ́ριοι, -αι, -α                         | μῡριοστός               | μῡριάκις           |
+|  1,0000 | μῡ́ριοι, -αι, -α                         | μῡριοστός               | μῡράκις            |
 |  2,0000 | δισμῡ́ριοι δύο μυριάδες                  | δισμῡριοστός            | δισμῡριάκις        |
 | 10,0000 | δεκακισμῡ́ριοι                           | δεκακισμῡριοστός        | δεκακισμῡριάκις         |
 
@@ -212,9 +233,9 @@ This section is based on [@Smyth1920, §§347].
 Unlike cardinal numbers, every ordinal number is delinable.
 
 ### Adverbial
-This section is based on [@Smyth1920, §§347].
+See [@Smyth1920, §§347].
 
-(TBU)
+- ἐνάκις has variant forms: ἐννάκις and ἐννεάκις, which are more popular in codices.
 
 ## Decimal Systems before Ionian Systems
 ### Linear B (TBU)
